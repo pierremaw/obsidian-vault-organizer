@@ -1,8 +1,0 @@
-{
-	"nodes":[
-		{"id":"3566df17c554d00a","x":214,"y":-36,"width":250,"height":60,"type":"text","text":"Contract account "},
-		{"id":"89d7f83b0df007b1","x":139,"y":-519,"width":400,"height":400,"type":"file","file":"1 Fields/Blockchain/Ethereum/Ethereum Account/Externally-owned account (EOA).md"},
-		{"id":"4e91e10b7cfeacd6","x":-323,"y":-179,"width":250,"height":60,"type":"text","text":"Ethereum Accounts"}
-	],
-	"edges":[]
-}

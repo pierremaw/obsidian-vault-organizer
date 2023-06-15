@@ -11,8 +11,13 @@
             "id": "c06b9f8cd869c92d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "8 Daily/Prompt - 3 Insights (!3).md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
             }
           }
         ]
@@ -90,6 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "8 Daily/Prompt - 3 Insights (!3).md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -106,6 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "8 Daily/Prompt - 3 Insights (!3).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -127,7 +134,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "8 Daily/Prompt - 3 Insights (!3).md"
+              }
             }
           },
           {
@@ -169,32 +178,32 @@
   },
   "active": "c06b9f8cd869c92d",
   "lastOpenFiles": [
-    "8 Daily/TradingView Indicator Edit (EMA 10 20 65).md",
-    "8 Daily/TradingView Indicator Edit (WT).md",
-    "8 Daily/TradingView Indicator Edit (FSX 3.11).md",
-    "5 Key Insights/Education/Learning/Stanford Alpaca — Learning Framework.md",
-    "5 Key Insights/Mental Models/Success/The most important skill is to learn the ability to learn rare and useful skills on-demand.md",
-    "8 Daily/Standardize Learning Environments.md",
-    "8 Daily/Learning speed relates to success.md",
-    "8 Daily/Learning Tips.md",
-    "5 Key Insights/Education/Learning/Reading technique.md",
-    "5 Key Insights/Education/Learning/Learning How To Learn.md",
-    "5 Key Insights/Education/Learning/Generate Insights.md",
-    "5 Key Insights/Math/Team structures/Factorial.md",
-    "8 Daily/The best projects are likely to be overlooked.md",
-    "5 Key Insights/Mental Models/Success/You want to be greedy when others are fearful. You want to be fearful when others are greedy. It's that simple..md",
-    "5 Key Insights/Natural Sciences/Research/Scientific Method.md",
-    "5 Key Insights/Systems/Decision Making/Fearless decision making.md",
-    "5 Key Insights/Trading/Perpetual Futures/Perps, Spot Indexes, & Funding.md",
-    "5 Key Insights/Trading/Risk Management/R system.md",
-    "5 Key Insights/Web 3.0/Web 3 Development/const hre = require(\"hardhat\");.md",
-    "5 Key Insights/Web 3.0/Web 3 Development/ethers.getContractFactory() VS ethers.getContractAt().md",
-    "5 Key Insights/Web 3.0/Web 3 Development/smart contract file that contains 2 contracts.md",
-    "5 Key Insights/Writing/Academic Writing/Thesis.md",
-    "5 Key Insights/Writing/Copywriting/How to write resume bullet points.md",
-    "8 Daily/Writing one sentence per line.md",
-    "5 Key Insights/Psychology/Cognitive Psychology/Spreading activation.md",
-    "5 Key Insights/Psychology/Cognitive Psychology/Spaced repetition.md",
+    "8 Daily/Prompt - Code Insights (!c).md",
+    "8 Daily/Prompt - Written Content (!w).md",
+    "8 Daily/Prompt - Learning Programme (!p).md",
+    "8 Daily/Prompt - Logic (!l).md",
+    "8 Daily/Prompt - 3 Insights (!3).md",
+    "8 Daily/Prompt - Guide (!g).md",
+    "8 Daily/Prompt - Information Tree (!i).md",
+    "1 Fields/Physics/Theory of Relativity/Theory of Relativity.md",
+    "1 Fields/Physics/Theory of Relativity/Special Relativity/Special Relativity.md",
+    "1 Fields/Trading/Centralized Exchanges/Order Book/Order Book.md",
+    "1 Fields/Trading/Centralized Exchanges/Centralized Exchanges.md",
+    "1 Fields/Trading/Trading Order Types/Trading Order Types.md",
+    "1 Fields/Trading/Perpetual Futures/Perpetual Futures.md",
+    "1 Fields/Trading/Risk Management/Risk Management.md",
+    "1 Fields/Trading/Trading Order Types/Limit Order/Limit Order.md",
+    "1 Fields/Wealth/Wealth.md",
+    "1 Fields/Trading/Trading System/Trading System.md",
+    "1 Fields/Writing/Writing.md",
+    "1 Fields/Web 3.0/Automated Market Makers (AMMs)/Concentrated Liquidity/Concentrated Liquidity.md",
+    "1 Fields/Web 3.0/Web 3.0.md",
+    "1 Fields/Systems/Personal Knowledge Management (PKM)/Personal Knowledge Management (PKM).md",
+    "1 Fields/Psychology/Psychology.md",
+    "1 Fields/Psychology/Memory/Memory.md",
+    "1 Fields/Psychology/Hypnosis/Hypnosis.md",
+    "1 Fields/Finance/Finance.md",
+    "1 Fields/Philosophy/Logic/Logic.md",
     "7 Canvas/JavaScript MindMap.canvas",
     "7 Canvas/Vyper MindMap.canvas",
     "7 Canvas/XPath & Selenium.canvas",

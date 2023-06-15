@@ -1,0 +1,1 @@
+{"path":".obsidian/plugins/text-extractor/cache/js/_attachments-JSON GET Request in Python.png-0cd53c4d068a054e8a28e6289f8019cb.json","text":"import requests response = requests.get('https://api.example.con/users') data = response. json() print(data)","libVersion":"0.0.0","langs":"eng","hash":"","size":0}

@@ -1,0 +1,16 @@
+# base
+
+| Feature | Description                                                                                                                                                                                                                                                                              |
+|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Inheritance                 | Base contracts can be inherited by other contracts using the is keyword. This allows for code reuse and simplifies the development and maintenance of complex contracts.                                                                                                                 |
+| Functionality               | Base contracts can define common functionality or data structures that are used by multiple contracts. This can help reduce code duplication and improve the overall structure of your smart contracts.                                                                                  |
+| Access modifiers            | Base contracts can define access modifiers like public, private, and internal, which determine the visibility of functions and variables to other contracts. This helps control the accessibility of contract functionality and data.                                                    |
+| Constructor functions       | Base contracts can define constructor functions, which are executed when the contract is created. This allows for initialization of contract state and can help ensure that the contract is properly configured before use.                                                              |
+| State variables             | Base contracts can define state variables, which are persistent variables that are stored on the blockchain. This allows for storage and retrieval of important data and state information for your contracts.                                                                           |
+| Events                      | Base contracts can define events, which are used to notify external applications of state changes in the contract. This can be useful for tracking important contract events and for building external interfaces to interact with your contracts.                                       |
+| Visibility                  | Base contracts can define the visibility of their functions and variables, which determines how they can be accessed by other contracts or external systems. This helps ensure that the contract behaves as intended and can prevent unauthorized access or modification.                |
+| Error handling              | Base contracts can define error handling functions or throw statements, which are used to handle errors and exceptions that can occur during contract execution. This helps ensure that the contract operates correctly and can prevent unexpected behavior or security vulnerabilities. |
+___
+Type: #microtopic 
+Topics: [[Blockchain]], [[Solidity]], [[Contracts in Solidity]]
+

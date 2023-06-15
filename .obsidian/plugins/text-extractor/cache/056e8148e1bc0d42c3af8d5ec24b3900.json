@@ -1,0 +1,1 @@
+{"path":".obsidian/plugins/text-extractor/cache/js/_attachments-JSON DELETE Request in Python.png-056e8148e1bc0d42c3af8d5ec24b3900.json","text":"import requests response = requests.delete('https://api . exanple. con/users/1') print(response. status_code)","libVersion":"0.0.0","langs":"eng","hash":"","size":0}

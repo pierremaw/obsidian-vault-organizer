@@ -1,0 +1,226 @@
+{
+  "main": {
+    "id": "fe1af28f6f6a4e27",
+    "type": "split",
+    "children": [
+      {
+        "id": "5ea65073720e2add",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c06b9f8cd869c92d",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "cfcf67784ffc4941",
+    "type": "split",
+    "children": [
+      {
+        "id": "b4d1e7c7f49bbf42",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7c10d389ce8fea25",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#subtopic",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "37d35e9c20def181",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "a594f7207f43c74b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "aa7d90d01727ace3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 345.5
+  },
+  "right": {
+    "id": "e0cc77f7d0617cce",
+    "type": "split",
+    "children": [
+      {
+        "id": "d5d12dd2834f967c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3718e907c96ef828",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "dd4b4ec50e1c9705",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "39f6c68f846d183b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "alphabetical",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "d52111227296a63e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "b3521a065fcdef3f",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "0d9f6f0a347136c8",
+            "type": "leaf",
+            "state": {
+              "type": "simple-note-review-sidebar-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 365.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "command-palette:Open command palette": false,
+      "templates:Insert template": false,
+      "daily-notes:Open today's daily note": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "omnisearch:Omnisearch": false
+    }
+  },
+  "active": "c06b9f8cd869c92d",
+  "lastOpenFiles": [
+    "8 Daily/TradingView Indicator Edit (EMA 10 20 65).md",
+    "8 Daily/TradingView Indicator Edit (WT).md",
+    "8 Daily/TradingView Indicator Edit (FSX 3.11).md",
+    "5 Key Insights/Education/Learning/Stanford Alpaca — Learning Framework.md",
+    "5 Key Insights/Mental Models/Success/The most important skill is to learn the ability to learn rare and useful skills on-demand.md",
+    "8 Daily/Standardize Learning Environments.md",
+    "8 Daily/Learning speed relates to success.md",
+    "8 Daily/Learning Tips.md",
+    "5 Key Insights/Education/Learning/Reading technique.md",
+    "5 Key Insights/Education/Learning/Learning How To Learn.md",
+    "5 Key Insights/Education/Learning/Generate Insights.md",
+    "5 Key Insights/Math/Team structures/Factorial.md",
+    "8 Daily/The best projects are likely to be overlooked.md",
+    "5 Key Insights/Mental Models/Success/You want to be greedy when others are fearful. You want to be fearful when others are greedy. It's that simple..md",
+    "5 Key Insights/Natural Sciences/Research/Scientific Method.md",
+    "5 Key Insights/Systems/Decision Making/Fearless decision making.md",
+    "5 Key Insights/Trading/Perpetual Futures/Perps, Spot Indexes, & Funding.md",
+    "5 Key Insights/Trading/Risk Management/R system.md",
+    "5 Key Insights/Web 3.0/Web 3 Development/const hre = require(\"hardhat\");.md",
+    "5 Key Insights/Web 3.0/Web 3 Development/ethers.getContractFactory() VS ethers.getContractAt().md",
+    "5 Key Insights/Web 3.0/Web 3 Development/smart contract file that contains 2 contracts.md",
+    "5 Key Insights/Writing/Academic Writing/Thesis.md",
+    "5 Key Insights/Writing/Copywriting/How to write resume bullet points.md",
+    "8 Daily/Writing one sentence per line.md",
+    "5 Key Insights/Psychology/Cognitive Psychology/Spreading activation.md",
+    "5 Key Insights/Psychology/Cognitive Psychology/Spaced repetition.md",
+    "7 Canvas/JavaScript MindMap.canvas",
+    "7 Canvas/Vyper MindMap.canvas",
+    "7 Canvas/XPath & Selenium.canvas",
+    "7 Canvas/ByBit API Requests.canvas",
+    "7 Canvas/Array.canvas",
+    "7 Canvas/Computer Science.canvas",
+    "7 Canvas/Data.canvas",
+    "7 Canvas/Data Structures.canvas",
+    "7 Canvas/Data Types.canvas",
+    "7 Canvas/Docker.canvas",
+    "_attachments/Functions in Math.png",
+    "2 Topics/Web Technology/Web Server Software",
+    "2 Topics/Devops/Docker",
+    "2 Topics/Data Structures/Hash Table",
+    "2 Topics/Data Structures/Linked List",
+    "2 Topics/Data Structures/Set",
+    "2 Topics/Data Structures/List",
+    "2 Topics/Data Structures/Schema",
+    "2 Topics/Data Structures/Graph",
+    "2 Topics/Data Structures/Array",
+    "2 Topics/Data Structures/Tuple",
+    "_attachments/Perps, Spot Indexes, & Funding.png",
+    "_attachments/Deductive vs Inductive Reasoning.png",
+    "_attachments/Order Book.png",
+    "_attachments/Pasted Image 20230425183441_681.png",
+    "_attachments/logarithm.png",
+    "_attachments/Scalar, Vector, Matrix, Tensor Infographic.png"
+  ]
+}

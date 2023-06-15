@@ -1,0 +1,16 @@
+| Feature            | Concept                                 | Application                                                                                                                                                                                                                                                                                   |
+|--------------------|-----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Name               | deposit                                 | The deposit function is used to wrap Ether in WETH.                                                                                                                                                                                                                                           |
+| Parameters         | value                                   | The value parameter represents the amount of Ether to wrap.                                                                                                                                                                                                                                   |
+| Return value       | Promise                                 | The deposit function returns a Promise that resolves with a transaction hash once the transaction has been submitted to the network.                                                                                                                                                          |
+| Network cost       | Gas fees                                | The deposit function requires a certain amount of gas fees to be paid in order to execute the transaction on the network. These fees are paid in Ether.                                                                                                                                       |
+| Transaction status | Success or failure                      | The deposit function can fail if the gas fees provided are insufficient, or if the user does not have enough Ether to cover the amount being wrapped. If the transaction is successful, the amount of WETH equal to the amount of Ether being wrapped will be credited to the user's account. |
+| Error handling     | try...catch                             | It is important to wrap the deposit function call in a try...catch block in order to handle any errors that may occur during execution. This can help prevent the program from crashing if an error occurs.                                                                                   |
+| Example            | await weth.deposit({ value: amountIn }) | This code wraps amountIn Ether into WETH by calling the deposit function on the WETH contract instance (weth). The value parameter is set to amountIn to specify the amount of Ether being wrapped.                                                                                           |
+
+
+
+___
+Type: #microtopic 
+Topics: [[Blockchain]], [[Ethereum]], [[Ethers.js]]
+

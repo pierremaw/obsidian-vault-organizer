@@ -1,0 +1,1 @@
+{"path":".obsidian/plugins/text-extractor/cache/we/_attachments-Webhook — client side — example.png-cfba99576c17e4373f186e97f633d7a9.json","text":"import requests data = {'name': 'John'} requests.post('http://exanple. con/webhook’, json=data)","libVersion":"0.0.0","langs":"eng","hash":"","size":0}

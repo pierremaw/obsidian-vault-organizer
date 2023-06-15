@@ -1,0 +1,5 @@
+This module provides a portable way of using operating system dependent functionality. If you just want to read or write a file see [`open()`](https://docs.python.org/3/library/functions.html#open "open"), if you want to manipulate paths, see the [`os.path`](https://docs.python.org/3/library/os.path.html#module-os.path "os.path: Operations on pathnames.") module, and if you want to read all the lines in all the files on the command line see the [`fileinput`](https://docs.python.org/3/library/fileinput.html#module-fileinput "fileinput: Loop over standard input or a list of files.") module. For creating temporary files and directories see the [`tempfile`](https://docs.python.org/3/library/tempfile.html#module-tempfile "tempfile: Generate temporary files and directories.") module, and for high-level file and directory handling see the [`shutil`](https://docs.python.org/3/library/shutil.html#module-shutil "shutil: High-level file operations, including copying.") module.
+___
+Type: #microtopic 
+Topics: [[Computer Science]], [[Software development]], [[Programming languages]], [[Python]], [[Modules in Python]]
+

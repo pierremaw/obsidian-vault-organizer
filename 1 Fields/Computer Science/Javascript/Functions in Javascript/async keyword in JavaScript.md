@@ -1,0 +1,14 @@
+`async` Indicates that the function returns a promise and can use `await` to pause execution until the promise is resolved.
+
+|                        |                                                                                                                                                                               |                                                                                                                                          |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Asynchronous Execution | Async functions can execute asynchronously, meaning they can operate without blocking the main thread and can wait for asynchronous operations to complete before continuing. | async function fetchData() {...}                                                                                                         |
+| Promise-Based Return   | Async functions always return a promise, which can be used to handle the result of the asynchronous operation.                                                                | async function fetchData() {... return new Promise(...)}                                                                                 |
+| Await Keyword          | The "await" keyword can be used to pause the execution of an async function until a promise is resolved, making it easier to work with asynchronous code.                     | async function fetchData() { const data = await fetch(url); }                                                                            |
+| Error Handling         | Async functions can use try/catch blocks to handle errors that occur during asynchronous operations.                                                                          | async function fetchData() { try { const data = await fetch(url); } catch (error) { console.log(error); } }                              |
+| Concurrency            | Async functions can be used to perform multiple asynchronous operations concurrently, improving the efficiency of the code.                                                   | async function fetchAll() { const [data1, data2, data3] = await Promise.all([fetch(url1), fetch(url2), fetch(url3)]); }                  |
+| Chaining               | Async functions can be chained together using the "await" keyword, allowing for more complex asynchronous operations.                                                         | async function fetchAndProcess() { const data = await fetch(url).then(response => response.json()).catch(error => console.log(error)); } |
+___
+Type: #microtopic 
+Topics: [[Computer Science]], [[JavaScript]], [[Functions in Javascript]]
+

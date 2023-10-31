@@ -11,9 +11,7 @@ from producer_search import producer_search
 from delete_circular_topics import delete_circular_topics
 from config import vault_path, field_folder_name, topic_folder_name, producer_folder_name, source_folder_name, key_insight_folder_name, extracted_insight_folder_name, template_folder_name
 
-'''
-DEFINE GLOBAL VARIABLES
-'''
+# Global dictionaries to store memo file paths, metadata, types, and folder paths
 memo_file_paths = {}
 memo_file_meta_data = {}
 memo_file_types = {}
@@ -21,14 +19,23 @@ memo_folder_paths = {}
 
 def update_memo_variables(vault_path):
     """
-    Update memo variables
+    Update global dictionaries with memo file paths, metadata, types, and folder paths.
+
+    Parameters
+    ----------
+    - vault_path (str): The path to the vault directory.
     """
+
     global memo_file_paths, memo_file_meta_data, memo_file_types, memo_folder_paths
     memo_file_paths, memo_file_meta_data, memo_file_types, memo_folder_paths = create_files_dict(vault_path)
 
 def organize_vault_structure(root_dir):
     """
-    Organize vault structure
+    Organize the vault structure by moving files to their respective folders based on their type and metadata.
+
+    Parameters
+    ----------
+    - root_dir (str): The root directory of the vault.
     """
     for note_name in memo_file_types['field']:
         try:
@@ -85,7 +92,7 @@ def organize_vault_structure(root_dir):
                 os.makedirs(target_folder_path, exist_ok=True)    
     
         except:
-            # print(f'topic section — error with topic {note_name}')
+            # print(f'Fix topic section, {note_name}')
             continue
         
     for note_name in memo_file_types['subtopic']:
@@ -110,7 +117,7 @@ def organize_vault_structure(root_dir):
                             topic_collection.append(topic_note)
 
                 except:
-                    # print(f'error with topic meta data')
+                    # print(f'Fix topic meta data')
                     continue
 
             topic_collection_queue = deque(topic_collection)
@@ -137,14 +144,13 @@ def organize_vault_structure(root_dir):
                         if topic_meta_data_type[0] == 'field':
                             field_collection.append(topic_note)
                 except:
-                    # print(f'error with topic meta data')
+                    # print(f'Fix topic meta data')
                     continue
 
             field_collection_queue = deque(field_collection)
             selected_field = None
             best_fuzzy_match = float('-inf')
 
-            '''PERFORM FUZZY MATCH FOR FIELD'''
             while field_collection_queue:
                 current_field = field_collection_queue.pop()
                 current_ratio = fuzz.ratio(current_field, note_name)
@@ -163,128 +169,129 @@ def organize_vault_structure(root_dir):
                 shutil.move(current_file_path, destination_path)
                 memo_file_paths[note_name] = destination_path
         
-            '''CREATE A TOPIC FOLDER FOR THE TOPIC IN THE TOPICS FOLDER'''
             target_folder_path = os.path.join(vault_path, topic_folder_name, selected_topic, note_name)
             if not os.path.exists(target_folder_path):
                 os.makedirs(target_folder_path, exist_ok=True)      
     
         except:
-            # print(f'topic section — error with topic {note_name}')
+            # print(f'Fix topic section, {note_name}')
             continue
+    
+    if 'microtopic' in memo_file_types:
 
-    for note_name in memo_file_types['microtopic']:
-        
-        try:
+        for note_name in memo_file_types['microtopic']:
             
-            note_great_grandparent_type = 'field'
-            note_grandparent_type = 'topic'
-            note_parent_type = 'subtopic'
-            note_type = 'microtopic'
-        
-            current_note_file_path = memo_file_paths[note_name]
-            note_meta_data = memo_file_meta_data[note_name]
-            note_topics = note_meta_data[note_name]['topic']
-            note_type = note_meta_data[note_name]['type']
-
-            if note_type:
-                note_type = note_type[0]
-
-            subtopic_collection = []
-            for topic_note in note_topics:
-                try:
-                    topic_note = topic_note.strip()
-                    topic_file_path = memo_file_paths[topic_note]
-                    topic_meta_data = memo_file_meta_data[topic_note]
-                    topic_meta_data_type = topic_meta_data[topic_note]['type']
-                    if topic_meta_data_type:
-                        if topic_meta_data_type[0] == note_parent_type:
-                            subtopic_collection.append(topic_note)
-
-                except:
-                    # print(f'error with topic meta data')
-                    continue
-
-            subtopic_collection_queue = deque(subtopic_collection)
-            selected_subtopic = None
-            best_fuzzy_match = float('-inf')
+            try:
+                
+                note_great_grandparent_type = 'field'
+                note_grandparent_type = 'topic'
+                note_parent_type = 'subtopic'
+                note_type = 'microtopic'
             
-            while subtopic_collection_queue:
-                current = subtopic_collection_queue.pop()
-                current_fuzzy_match = fuzz.ratio(current, note_name)
-                if current_fuzzy_match > best_fuzzy_match:
-                    best_fuzzy_match = current_fuzzy_match
-                    selected_subtopic = current
+                current_note_file_path = memo_file_paths[note_name]
+                note_meta_data = memo_file_meta_data[note_name]
+                note_topics = note_meta_data[note_name]['topic']
+                note_type = note_meta_data[note_name]['type']
 
-            selected_meta_data = memo_file_meta_data[selected_subtopic]
-            selected_topics = selected_meta_data[selected_subtopic]['topic']
-            
-            collection = []
+                if note_type:
+                    note_type = note_type[0]
 
-            if selected_topics:
-                for topic_note in selected_topics:
+                subtopic_collection = []
+                for topic_note in note_topics:
                     try:
+                        topic_note = topic_note.strip()
+                        topic_file_path = memo_file_paths[topic_note]
                         topic_meta_data = memo_file_meta_data[topic_note]
                         topic_meta_data_type = topic_meta_data[topic_note]['type']
                         if topic_meta_data_type:
-                            if topic_meta_data_type[0] == note_grandparent_type:
-                                collection.append(topic_note)
+                            if topic_meta_data_type[0] == note_parent_type:
+                                subtopic_collection.append(topic_note)
+
                     except:
-                        # print(f'error with topic meta data')
+                        # print(f'Fix topic meta data')
                         continue
 
-            collection_queue = deque(collection)
-            selected_topic = None
-            best_fuzzy_match = float('-inf')
-            while collection_queue:
-                current = collection_queue.pop()
-                current_fuzzy_match = fuzz.ratio(current, note_name)
-                if current_fuzzy_match > best_fuzzy_match:
-                    best_fuzzy_match = current_fuzzy_match
-                    selected_topic = current
+                subtopic_collection_queue = deque(subtopic_collection)
+                selected_subtopic = None
+                best_fuzzy_match = float('-inf')
+                
+                while subtopic_collection_queue:
+                    current = subtopic_collection_queue.pop()
+                    current_fuzzy_match = fuzz.ratio(current, note_name)
+                    if current_fuzzy_match > best_fuzzy_match:
+                        best_fuzzy_match = current_fuzzy_match
+                        selected_subtopic = current
 
-            selected_meta_data = memo_file_meta_data[selected_topic]
-            selected_topics = selected_meta_data[selected_topic]['topic']
+                selected_meta_data = memo_file_meta_data[selected_subtopic]
+                selected_topics = selected_meta_data[selected_subtopic]['topic']
+                
+                collection = []
 
-            collection = []
+                if selected_topics:
+                    for topic_note in selected_topics:
+                        try:
+                            topic_meta_data = memo_file_meta_data[topic_note]
+                            topic_meta_data_type = topic_meta_data[topic_note]['type']
+                            if topic_meta_data_type:
+                                if topic_meta_data_type[0] == note_grandparent_type:
+                                    collection.append(topic_note)
+                        except:
+                            # print(f'Fix topic meta data')
+                            continue
 
-            if selected_topics:
-                for topic_note in selected_topics:
-                    try:
-                        topic_meta_data = memo_file_meta_data[topic_note]
-                        topic_meta_data_type = topic_meta_data[topic_note]['type']
-                        if topic_meta_data_type:
-                            if topic_meta_data_type[0] == note_great_grandparent_type: 
-                                collection.append(topic_note)
-                    except:
-                        # print(f'error with topic meta data')
-                        continue
-
-            if len(collection) > 1:
                 collection_queue = deque(collection)
-                selected_field = None
+                selected_topic = None
                 best_fuzzy_match = float('-inf')
                 while collection_queue:
                     current = collection_queue.pop()
                     current_fuzzy_match = fuzz.ratio(current, note_name)
                     if current_fuzzy_match > best_fuzzy_match:
                         best_fuzzy_match = current_fuzzy_match
-                        selected_field = current
-            elif len(collection) == 1:
-                selected_field = collection[0]
-    
-            target_folder_path = os.path.join(vault_path, field_folder_name, selected_field, selected_topic, selected_subtopic)
-            if not os.path.exists(target_folder_path):
-                os.makedirs(target_folder_path, exist_ok=True)              
+                        selected_topic = current
+
+                selected_meta_data = memo_file_meta_data[selected_topic]
+                selected_topics = selected_meta_data[selected_topic]['topic']
+
+                collection = []
+
+                if selected_topics:
+                    for topic_note in selected_topics:
+                        try:
+                            topic_meta_data = memo_file_meta_data[topic_note]
+                            topic_meta_data_type = topic_meta_data[topic_note]['type']
+                            if topic_meta_data_type:
+                                if topic_meta_data_type[0] == note_great_grandparent_type: 
+                                    collection.append(topic_note)
+                        except:
+                            # print(f'Fix topic meta data')
+                            continue
+
+                if len(collection) > 1:
+                    collection_queue = deque(collection)
+                    selected_field = None
+                    best_fuzzy_match = float('-inf')
+                    while collection_queue:
+                        current = collection_queue.pop()
+                        current_fuzzy_match = fuzz.ratio(current, note_name)
+                        if current_fuzzy_match > best_fuzzy_match:
+                            best_fuzzy_match = current_fuzzy_match
+                            selected_field = current
+                elif len(collection) == 1:
+                    selected_field = collection[0]
         
-            destination_path = f'{target_folder_path}/'+f"{note_name}.md"
+                target_folder_path = os.path.join(vault_path, field_folder_name, selected_field, selected_topic, selected_subtopic)
+                if not os.path.exists(target_folder_path):
+                    os.makedirs(target_folder_path, exist_ok=True)              
             
-            if current_note_file_path != destination_path:
-                shutil.move(current_note_file_path, destination_path)
-                memo_file_paths[note_name] = destination_path
-    
-        except:
-            # print(f'microtopic section — error with topic {note_name}')
-            continue
+                destination_path = f'{target_folder_path}/'+f"{note_name}.md"
+                
+                if current_note_file_path != destination_path:
+                    shutil.move(current_note_file_path, destination_path)
+                    memo_file_paths[note_name] = destination_path
+        
+            except:
+                # print(f'Fix microtopic section, {note_name}')
+                continue
         
     for note_name in memo_file_types['key_insight']:
         
@@ -341,7 +348,7 @@ def organize_vault_structure(root_dir):
                 memo_file_paths[note_name] = destination_path
 
         except:
-            # print(f'key_insights section — error with topic {note_name}')
+            # print(f'Fix key insights section, {note_name}')
             continue
 
     for note_name in memo_file_types['extracted_insight']:
@@ -402,7 +409,7 @@ def organize_vault_structure(root_dir):
                 memo_file_paths[note_name] = destination_path
 
         except:
-            # print(f'extracted_insights section — error with topic {note_name}')
+            # print(f'Fix extracted insights section, {note_name}')
             continue
 
     for note_name in memo_file_types['source']:
@@ -466,7 +473,7 @@ def organize_vault_structure(root_dir):
                 memo_file_paths[note_name] = destination_path
 
         except:
-            # print(f'source section — error with topic {note_name}')
+            # print(f'Fix source section, {note_name}')
             continue
                 
     for note_name in memo_file_types['producer']:
@@ -487,39 +494,77 @@ def organize_vault_structure(root_dir):
                 memo_file_paths[note_name] = destination_path
 
         except:
-            # print(f'producer section — error with producer {note_name}')
+            # print(f'Fix producer section, {note_name}')
             continue
                 
     return True
 
 def update_topics(memo_file_paths, memo_file_meta_data):
-    
-    for k,v in memo_file_paths.items():
+    """
+    Updates topics for the provided memo files.
+
+    Iterates over the provided memo files and updates their topics by calling the `topic_search` function.
+
+    Parameters
+    ----------
+    - memo_file_paths (dict): A dictionary containing the paths of the memo files.
+    - memo_file_meta_data (dict): A dictionary containing metadata for the memo files.
+    """
+    for k, v in memo_file_paths.items():
         topic_search(v, memo_file_paths, memo_file_meta_data)
 
 def update_producers(memo_file_paths, memo_file_meta_data):
-            for v in memo_file_paths.values():
-                if template_folder_name in v:
-                    continue
-                producer_search(v, memo_file_paths, memo_file_meta_data)
+    """
+    Updates producers for the provided memo files, excluding those in the template folder.
+
+    Iterates over the provided memo files and updates their producers by calling the `producer_search` function,
+    but skips files that are located in the template folder.
+
+    Parameters
+    ----------
+    - memo_file_paths (dict): A dictionary containing the paths of the memo files.
+    - memo_file_meta_data (dict): A dictionary containing metadata for the memo files.
+    """
+    for v in memo_file_paths.values():
+        if template_folder_name in v:
+            continue
+        producer_search(v, memo_file_paths, memo_file_meta_data)
 
 def delete_circular_topics_call(memo_file_paths, memo_file_meta_data):
+    """
+    Removes circular topics from the provided memo files.
+
+    Iterates over the provided memo files and deletes circular topics by calling the `delete_circular_topics` function.
+
+    Parameters
+    ----------
+    - memo_file_paths (dict): A dictionary containing the paths of the memo files.
+    - memo_file_meta_data (dict): A dictionary containing metadata for the memo files.
+    """
     for v in memo_file_paths.values():
         delete_circular_topics(v, memo_file_meta_data)
 
 def delete_empty_folders(memo_folder_paths):
-    '''
-    Helper function that traverses the vault and deletes empty folders
-    '''
+    """
+    Deletes empty folders from the vault.
+
+    Helper function that traverses the vault and deletes folders that are empty.
+
+    Parameters
+    ----------
+    - memo_folder_paths (list): A list containing the paths of the folders to check.
+
+    Note:
+    The function currently uses a globally defined variable `vault_path` which should be passed as an argument 
+    or documented for clarity.
+    """
     for root, dirs, files in os.walk(vault_path, topdown=False):
         for name in dirs:
             dir_path = os.path.join(root, name)
             if not os.listdir(dir_path):
                 os.rmdir(dir_path)
-       
-'''
-INVOKE CORE FUNCTIONS
-'''
+
+# Call main functions
 update_memo_variables(vault_path)
 delete_empty_folders(memo_folder_paths)
 update_topics(memo_file_paths, memo_file_meta_data)
@@ -527,4 +572,3 @@ update_producers(memo_file_paths, memo_file_meta_data)
 delete_circular_topics_call(memo_file_paths, memo_file_meta_data)
 update_memo_variables(vault_path)
 organize_vault_structure(vault_path)
-

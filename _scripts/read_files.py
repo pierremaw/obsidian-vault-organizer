@@ -32,10 +32,12 @@ def read_file_lines(file_path):
     
     This function reads a file and returns its content as a list of lines.
     
-    Args:
+    Parameters
+    ----------
     - file_path (str): The path to the file to be read.
     
-    Returns:
+    Returns
+    -------
     - list of str: A list containing each line of the file as a separate string.
     """
     with open(file_path, "r") as f:

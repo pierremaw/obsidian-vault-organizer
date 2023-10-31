@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "5ea65073720e2add",
+        "id": "ead918ce2fbbadda",
         "type": "tabs",
         "children": [
           {
-            "id": "c06b9f8cd869c92d",
+            "id": "f15f4097ab73dd19",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6 Extracted Insights/AI/Neural Networks/Fascinating.md",
+                "file": "1 Fields/Computer Science/Computer Science.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "6 Extracted Insights/AI/Neural Networks/Fascinating.md",
+                "file": "1 Fields/Computer Science/Computer Science.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "6 Extracted Insights/AI/Neural Networks/Fascinating.md",
+                "file": "1 Fields/Computer Science/Computer Science.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6 Extracted Insights/AI/Neural Networks/Fascinating.md"
+                "file": "1 Fields/Computer Science/Computer Science.md"
               }
             }
           },
@@ -176,44 +176,42 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "c06b9f8cd869c92d",
+  "active": "f15f4097ab73dd19",
   "lastOpenFiles": [
+    "System Design.md",
+    "1 Fields/System Design/System Design.md",
+    "1 Fields/System Design",
+    "1 Fields/Computer Science/Computer Science.md",
+    "Untitled",
+    "1 Fields/System Design/Requirements/Requirements.md",
+    "Requirements.md",
+    "2 Topics/Requirements",
+    "Requirements.md",
+    "1 Fields/System Design/Requirements",
     "_templates/extracted insight.md",
-    "6 Extracted Insights/Fascinating.md",
-    "6 Extracted Insights/AI/Neural Networks/Fascinating.md",
-    "6 Extracted Insights/AI/Neural Networks",
+    "3 Producers/Pierre Maw.md",
+    "5 Key Insights/AI Key Insight.md",
+    "6 Extracted Insights/AI/Machine Learning/Machine Learning Extracted Insight.md",
+    "Deep Learning.md",
+    "1 Fields/Deep Learning/Deep Learning.md",
+    "1 Fields/Deep Learning",
+    "5 Key Insights",
+    "5 Key Insights",
+    "6 Extracted Insights/Machine Learning Extracted Insight.md",
+    "6 Extracted Insights/AI/Machine Learning",
     "6 Extracted Insights/AI",
+    "5 Key Insights/AI/Machine Learning",
+    "6 Extracted Insights/AI/Neural Networks/Fascinating.md",
+    "6 Extracted Insights/Fascinating.md",
     "_templates/key insight.md",
     "4 Sources/Source.md",
     "1 Fields/Science/Science.md",
     "Science.md",
     "Science.md",
     "Science.md",
-    "3 Producers/Pierre Maw.md",
-    "4 Sources",
-    "4 Sources",
     "4 Sources/Computer Science/Web Technology/source.md",
     "3 Producers/test.md",
     "Science.md",
-    "Science.md",
-    "1 Fields/Wealth/Wealth.md",
-    "1 Fields/Science",
-    "Finance.md",
-    "2 Topics/Neural Networks",
-    "2 Topics/Machine Learning/Supervised Learning",
-    "2 Topics/Machine Learning",
-    "2 Topics/Deep Learn",
-    "2 Topics/Systems",
-    "1 Fields/AI/Systems/Systems.md",
-    "Systems.md",
-    "_scripts/Systems.md",
-    "_templates/topic.md",
-    "_templates/field.md",
-    "1 Fields/topic/topic.md",
-    "1 Fields/field/field.md",
-    "1 Fields/AI/Deep Learn/Deep Learn.md",
-    "1 Fields/Deep Learn/Deep Learn.md",
-    "3 Producers/Deep Learn.md",
     "7 Canvas/JavaScript MindMap.canvas",
     "7 Canvas/Vyper MindMap.canvas",
     "7 Canvas/XPath & Selenium.canvas",

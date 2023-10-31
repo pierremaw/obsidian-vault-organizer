@@ -30,7 +30,7 @@ def _meta_data_search(file_path, memo):
         ...
     }
 
-    Note:
+    Tip:
     - The function utilizes memoization to avoid redundant parsing of files.
     """
     

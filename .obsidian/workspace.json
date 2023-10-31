@@ -4,20 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "876c9181bb2ec67f",
+        "id": "1cdcdc80ad7ae62c",
         "type": "tabs",
         "children": [
           {
-            "id": "99ea2c79ee1d9355",
+            "id": "ef493e7d39b664c3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1 Fields/AI/Neural Networks/Neural Networks.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -95,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1 Fields/AI/Neural Networks/Neural Networks.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -112,7 +106,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1 Fields/AI/Neural Networks/Neural Networks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -135,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1 Fields/AI/Neural Networks/Neural Networks.md"
+                "file": "Machine Learning.md"
               }
             }
           },
@@ -176,13 +169,18 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "99ea2c79ee1d9355",
+  "active": "a594f7207f43c74b",
   "lastOpenFiles": [
+    "1 Fields/AI/Machine Learning/Machine Learning.md",
+    "Machine Learning.md",
+    "1 Fields/AI/Neural Networks/Neural Networks.md",
+    "1 Fields/Design/Design.md",
+    "Design.md",
+    "1 Fields/Design",
     "3 Key Insights/Key Insight 1.md",
     "Neural Networks.md",
-    "1 Fields/AI/Neural Networks/Neural Networks.md",
     "1 Fields/Writing/Writing.md",
-    "1 Fields/AI/Machine Learning/Machine Learning.md",
+    "Machine Learning.md",
     "1 Fields/AI/Deep Learning/Deep Learning.md",
     "1 Fields/AI/Supervised Learning/Supervised Learning.md",
     "1 Fields/Computer Science/Computer Science.md",
@@ -209,10 +207,6 @@
     "1 Fields/AI/Robotics",
     "Machine learning note.md",
     "_templates/Sub Topic.md",
-    "_templates/Micro Topic.md",
-    "1 Fields/AI/Machine Learning/reinforcement learning/reinforcement learning.md",
-    "reinforcement learning.md",
-    "2 Topics/Machine Learning/reinforcement learning",
     "7 Canvas/JavaScript MindMap.canvas",
     "7 Canvas/Vyper MindMap.canvas",
     "7 Canvas/XPath & Selenium.canvas",

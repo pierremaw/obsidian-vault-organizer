@@ -20,17 +20,7 @@ def topic_search(file_path: str, memo_file_paths: dict, memo_file_meta_data: dic
     Returns
     -------
     - list: A list of unique topic names. Returns None if no topics are found.
-
-    Notes
-    -----
-    The function expects certain folder names like 'template_folder' to be 
-    globally defined. Similarly, functions like 'read_file' should be defined elsewhere 
-    in the code for this function to work correctly.
     """
-
-    # Skip processing if the file is in the template folder
-    if template_folder in file_path:
-        return
 
     memo = {}
     topics = _topic_search(file_path, 0, memo, memo_file_paths, memo_file_meta_data)
@@ -103,7 +93,7 @@ def _topic_search(file_path, distance, memo, memo_file_paths, memo_file_meta_dat
     -------
     - dict: A dictionary mapping topic names to their respective distances. Returns None in case of exceptions.
 
-    Note
+    Tip
     ----
     The function utilizes regular expressions to extract topic names.
     """

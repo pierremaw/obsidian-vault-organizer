@@ -35,7 +35,7 @@ Before running the script, ensure you've configured your vault settings in the `
 
 - **update_memo_variables(vault_path)**: Update global dictionaries with memo file paths, metadata, types, and folder paths.
 
-- **organize_vault_structure(root_dir)**: Organize the vault structure by moving files to their respective folders based on their type and metadata.
+- **vault_organizer(root_dir)**: Organize the vault structure by moving files to their respective folders based on their type and metadata.
 
 - **update_topics(memo_file_paths, memo_file_meta_data)**: Iterates over memo files and updates their topics using the `topic_search` function.
 

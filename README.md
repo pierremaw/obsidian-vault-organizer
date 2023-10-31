@@ -5,10 +5,10 @@ https://github.com/pierremaw/Obsidian-Vault-Organizer/assets/99075249/46bac793-d
 ## Introduction
 Welcome to the Vault Organizer! I built this script because I was fascinated by recursion and dynamic programming, and I wanted to visualize them in action.
 
-The Vault Organizer is a Python utility script aimed at organizing, updating, and maintaining an obsidian file vault. This vault is composed of markdown memo files with distinct types and metadata. The script provides functionalities such as:
-- Moving files based on their types and metadata to respective folders.
-- Updating topics within the memo files.
-- Removing circular topics from the memo files.
+The Vault Organizer is a Python utility script aimed at organizing, updating, and maintaining an obsidian file vault. This vault is composed of markdown notes with distinct types and metadata. The script provides functionalities such as:
+- Moving files based on their types to respective folders.
+- Updating topics within the note files.
+- Removing circular topics from the note files.
 - Deleting empty folders while ensuring core folders remain protected.
 
 ## Prerequisites

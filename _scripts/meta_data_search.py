@@ -16,7 +16,8 @@ def _meta_data_search(file_path, memo):
     - file_path (str): The path to the file from which metadata should be extracted.
     - memo (dict): The memoization dictionary used to store metadata information. It is updated in-place.
 
-    Returns:
+    Returns
+    -------
     - dict: The updated memo dictionary containing metadata for the given file and potentially other files.
     
     Structure of the memo dictionary:
@@ -30,7 +31,8 @@ def _meta_data_search(file_path, memo):
         ...
     }
 
-    Note:
+    Note
+    ----
     - The function utilizes memoization to avoid redundant parsing of files.
     """
     

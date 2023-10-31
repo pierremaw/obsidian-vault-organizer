@@ -1,7 +1,5 @@
 vault_path = "./"
-
 template_folder_name = "_templates/"
-
 field_folder_name = "1 Fields/"
 topic_folder_name = "2 Topics/"
 producer_folder_name = "3 Producers/"

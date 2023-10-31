@@ -11,6 +11,17 @@ from producer_search import producer_search
 from delete_circular_topics import delete_circular_topics
 from config import vault_path, field_folder_name, topic_folder_name, producer_folder_name, source_folder_name, key_insight_folder_name, extracted_insight_folder_name, template_folder_name
 
+# Define the core folders that should never be deleted
+CORE_FOLDERS = [
+    "_templates/",
+    "1 Fields/",
+    "2 Topics/",
+    "3 Producers/",
+    "4 Sources/",
+    "5 Key Insights/",
+    "6 Extracted Insights/"
+]
+
 # Global dictionaries to store memo file paths, metadata, types, and folder paths
 memo_file_paths = {}
 memo_file_meta_data = {}
@@ -37,152 +48,143 @@ def organize_vault_structure(root_dir):
     ----------
     - root_dir (str): The root directory of the vault.
     """
-    for note_name in memo_file_types['field']:
-        try:
-            field_instance_folder = f"{vault_path}{field_folder_name}{note_name}/"
+    if 'field' in memo_file_types:
+        for note_name in memo_file_types['field']:
+            try:
+                field_instance_folder = f"{vault_path}{field_folder_name}{note_name}/"
+                check_folder_path = os.path.isdir(field_instance_folder)
+                if not check_folder_path:
+                    os.mkdir(field_instance_folder)
+                file_path = memo_file_paths[note_name]
+                destination_path = field_instance_folder+f"{note_name}.md"
             
-            check_folder_path = os.path.isdir(field_instance_folder)
-            
-            if not check_folder_path:
-                os.mkdir(field_instance_folder)
+                if file_path != destination_path:
+                    shutil.move(file_path, destination_path)
+                    memo_file_paths[note_name] = destination_path    
+            except:
+                continue
 
-            file_path = memo_file_paths[note_name]
-            destination_path = field_instance_folder+f"{note_name}.md"
-        
-            if file_path != destination_path:
-                shutil.move(file_path, destination_path)
-                memo_file_paths[note_name] = destination_path    
-        except:
-            continue
-
-    for note_name in memo_file_types['topic']:
-        
-        try:
-            note_parent_type = 'field'
-            note_type = 'topic'
-            
-            file_path = memo_file_paths[note_name]
-            note_meta_data = memo_file_meta_data[note_name]
-            note_topics = note_meta_data[note_name]['topic']
-
-            field_collection = [note_topics[0]]
-            field_collection_queue = deque(field_collection)
-            selected_field = None
-            best_fuzzy_match = float('-inf')
-            while field_collection_queue:
-                current_field = field_collection_queue.pop()
-                current_ratio = fuzz.ratio(current_field, note_name)
-                if current_ratio > best_fuzzy_match:
-                    best_fuzzy_match = current_ratio
-                    selected_field = current_field
-
-            target_folder_path = os.path.join(vault_path, field_folder_name, selected_field, note_name)
-            if not os.path.exists(target_folder_path):
-                os.makedirs(target_folder_path, exist_ok=True)      
-
-            current_file_path = memo_file_paths[note_name]
-            destination_path = f'{target_folder_path}/'+f"{note_name}.md"
-            
-            if current_file_path != destination_path:
-                shutil.move(current_file_path, destination_path)
-                memo_file_paths[note_name] = destination_path
-
-            target_folder_path = os.path.join(vault_path, topic_folder_name, note_name)
-            if not os.path.exists(target_folder_path):
-                os.makedirs(target_folder_path, exist_ok=True)    
-    
-        except:
-            # print(f'Fix topic section, {note_name}')
-            continue
-        
-    for note_name in memo_file_types['subtopic']:
-        
-        try:
-            note_parent_type = 'topic'
-            note_type = 'subtopic'  
-            file_path = memo_file_paths[note_name]         
-            note_meta_data = memo_file_meta_data[note_name]
-            note_topics = note_meta_data[note_name]['topic']
-            
-            topic_collection = []
-
-            for topic_note in note_topics:
-                try:
-                    topic_note = topic_note.strip()        
-                    topic_file_path = memo_file_paths[topic_note]
-                    topic_meta_data = memo_file_meta_data[topic_note]
-                    topic_meta_data_type = topic_meta_data[topic_note]['type']
-                    if topic_meta_data_type:
-                        if topic_meta_data_type[0] == note_parent_type:
-                            topic_collection.append(topic_note)
-
-                except:
-                    # print(f'Fix topic meta data')
-                    continue
-
-            topic_collection_queue = deque(topic_collection)
-
-            selected_topic = None
-            best_fuzzy_match = float('-inf')
-            while topic_collection_queue:
-                current_topic = topic_collection_queue.pop()
-                current_ratio = fuzz.ratio(current_topic, note_name)
-                if current_ratio > best_fuzzy_match:
-                    best_fuzzy_match = current_ratio
-                    selected_topic = current_topic
-            selected_topic_meta_data = memo_file_meta_data[selected_topic]
-            selected_topic_topics = selected_topic_meta_data[selected_topic]['topic']
-            
-            field_collection = []
-            for topic_note in selected_topic_topics:
-                try:
-                    topic_note = topic_note.strip()    
-                    topic_meta_data = memo_file_meta_data[topic_note]
-                    topic_meta_data_type = topic_meta_data[topic_note]['type']
+    if 'topic' in memo_file_types:
+        for note_name in memo_file_types['topic']:
+            try:
+                note_parent_type = 'field'
+                note_type = 'topic'
+                file_path = memo_file_paths[note_name]
+                note_meta_data = memo_file_meta_data[note_name]
+                note_topics = note_meta_data[note_name]['topic']
+                field_collection = [note_topics[0]]
+                field_collection_queue = deque(field_collection)
+                selected_field = None
+                best_fuzzy_match = float('-inf')
                 
-                    if topic_meta_data_type:
-                        if topic_meta_data_type[0] == 'field':
-                            field_collection.append(topic_note)
-                except:
-                    # print(f'Fix topic meta data')
-                    continue
+                while field_collection_queue:
+                    current_field = field_collection_queue.pop()
+                    current_ratio = fuzz.ratio(current_field, note_name)
+                    if current_ratio > best_fuzzy_match:
+                        best_fuzzy_match = current_ratio
+                        selected_field = current_field
 
-            field_collection_queue = deque(field_collection)
-            selected_field = None
-            best_fuzzy_match = float('-inf')
+                target_folder_path = os.path.join(vault_path, field_folder_name, selected_field, note_name)
+                if not os.path.exists(target_folder_path):
+                    os.makedirs(target_folder_path, exist_ok=True)      
 
-            while field_collection_queue:
-                current_field = field_collection_queue.pop()
-                current_ratio = fuzz.ratio(current_field, note_name)
-    
-                if current_ratio > best_fuzzy_match:
-                    best_fuzzy_match = current_ratio
-                    selected_field = current_field
+                current_file_path = memo_file_paths[note_name]
+                destination_path = f'{target_folder_path}/'+f"{note_name}.md"
+                
+                if current_file_path != destination_path:
+                    shutil.move(current_file_path, destination_path)
+                    memo_file_paths[note_name] = destination_path
 
-            target_folder_path = os.path.join(vault_path, field_folder_name, selected_field, selected_topic, note_name)
-            if not os.path.exists(target_folder_path):
-                os.makedirs(target_folder_path, exist_ok=True)      
-    
-            current_file_path = memo_file_paths[note_name]
-            destination_path = f'{target_folder_path}/'+f"{note_name}.md"
-            if current_file_path != destination_path:
-                shutil.move(current_file_path, destination_path)
-                memo_file_paths[note_name] = destination_path
+                target_folder_path = os.path.join(vault_path, topic_folder_name, note_name)
+                if not os.path.exists(target_folder_path):
+                    os.makedirs(target_folder_path, exist_ok=True)    
         
-            target_folder_path = os.path.join(vault_path, topic_folder_name, selected_topic, note_name)
-            if not os.path.exists(target_folder_path):
-                os.makedirs(target_folder_path, exist_ok=True)      
-    
-        except:
-            # print(f'Fix topic section, {note_name}')
-            continue
+            except:
+                # print(f'Fix topic section, {note_name}')
+                continue
+        
+    if 'subtopic' in memo_file_types:
+        for note_name in memo_file_types['subtopic']:
+            try:
+                note_parent_type = 'topic'
+                note_type = 'subtopic'  
+                file_path = memo_file_paths[note_name]         
+                note_meta_data = memo_file_meta_data[note_name]
+                note_topics = note_meta_data[note_name]['topic']
+                
+                topic_collection = []
+                for topic_note in note_topics:
+                    try:
+                        topic_note = topic_note.strip()        
+                        topic_file_path = memo_file_paths[topic_note]
+                        topic_meta_data = memo_file_meta_data[topic_note]
+                        topic_meta_data_type = topic_meta_data[topic_note]['type']
+                        if topic_meta_data_type:
+                            if topic_meta_data_type[0] == note_parent_type:
+                                topic_collection.append(topic_note)
+                    except:
+                        # print(f'Fix topic meta data')
+                        continue
+
+                topic_collection_queue = deque(topic_collection)
+                selected_topic = None
+                best_fuzzy_match = float('-inf')
+                while topic_collection_queue:
+                    current_topic = topic_collection_queue.pop()
+                    current_ratio = fuzz.ratio(current_topic, note_name)
+                    if current_ratio > best_fuzzy_match:
+                        best_fuzzy_match = current_ratio
+                        selected_topic = current_topic
+                selected_topic_meta_data = memo_file_meta_data[selected_topic]
+                selected_topic_topics = selected_topic_meta_data[selected_topic]['topic']
+                
+                field_collection = []
+                for topic_note in selected_topic_topics:
+                    try:
+                        topic_note = topic_note.strip()    
+                        topic_meta_data = memo_file_meta_data[topic_note]
+                        topic_meta_data_type = topic_meta_data[topic_note]['type']
+                    
+                        if topic_meta_data_type:
+                            if topic_meta_data_type[0] == 'field':
+                                field_collection.append(topic_note)
+                    except:
+                        # print(f'Fix topic meta data')
+                        continue
+
+                field_collection_queue = deque(field_collection)
+                selected_field = None
+                best_fuzzy_match = float('-inf')
+
+                while field_collection_queue:
+                    current_field = field_collection_queue.pop()
+                    current_ratio = fuzz.ratio(current_field, note_name)
+        
+                    if current_ratio > best_fuzzy_match:
+                        best_fuzzy_match = current_ratio
+                        selected_field = current_field
+
+                target_folder_path = os.path.join(vault_path, field_folder_name, selected_field, selected_topic, note_name)
+                if not os.path.exists(target_folder_path):
+                    os.makedirs(target_folder_path, exist_ok=True)      
+        
+                current_file_path = memo_file_paths[note_name]
+                destination_path = f'{target_folder_path}/'+f"{note_name}.md"
+                if current_file_path != destination_path:
+                    shutil.move(current_file_path, destination_path)
+                    memo_file_paths[note_name] = destination_path
+            
+                target_folder_path = os.path.join(vault_path, topic_folder_name, selected_topic, note_name)
+                if not os.path.exists(target_folder_path):
+                    os.makedirs(target_folder_path, exist_ok=True)      
+        
+            except:
+                # print(f'Fix topic section, {note_name}')
+                continue
     
     if 'microtopic' in memo_file_types:
-
         for note_name in memo_file_types['microtopic']:
-            
             try:
-                
                 note_great_grandparent_type = 'field'
                 note_grandparent_type = 'topic'
                 note_parent_type = 'subtopic'
@@ -293,209 +295,207 @@ def organize_vault_structure(root_dir):
                 # print(f'Fix microtopic section, {note_name}')
                 continue
         
-    for note_name in memo_file_types['key_insight']:
-        
-        try:
-            note_type = 'key_insight'
-            
-            current_file_path = memo_file_paths[note_name]
-            note_meta_data = memo_file_meta_data[note_name]
-            note_topics = note_meta_data[note_name]['topic']
-            
-            topics_list = []
-            fields_list = []
-            for topic in note_topics:
-                topic_meta_data = memo_file_meta_data[topic]
-                topic_type = topic_meta_data[topic]['type']
-                if topic_type and topic_type[0] == 'topic':
-                    topics_list.append(topic)
-                if topic_type and topic_type[0] == 'field':
-                    fields_list.append(topic)
-
-            if len(topics_list) > 1:
-                topics_list_queue = deque(topics_list)
-                selected_topic = None
-                best_fuzzy_match = float('-inf')
-                while topics_list_queue:
-                    current_topic = topics_list_queue.pop()
-                    current_ratio = fuzz.ratio(current_topic, note_name)
-                    if current_ratio > best_fuzzy_match:
-                        best_fuzzy_match = current_ratio
-                        selected_topic = current_topic
-            elif len(topics_list) == 1:
-                selected_topic = topics_list[0]
-
-            if len(fields_list) > 1:
-                fields_list_queue = deque(fields_list)
-                selected_field = None
-                best_fuzzy_match = float('-inf')
-                while fields_list_queue:
-                    current_field = fields_list_queue.pop()
-                    current_ratio = fuzz.ratio(current_field, note_name)
-                    if current_ratio > best_fuzzy_match:
-                        best_fuzzy_match = current_ratio
-                        selected_field = current_field
-            elif len(fields_list) == 1:
-                selected_field = fields_list[0]
-
-            target_folder_path = os.path.join(vault_path, key_insight_folder_name, selected_field, selected_topic)                
-            if not os.path.exists(target_folder_path):
-                os.makedirs(target_folder_path, exist_ok=True)      
-            
-            destination_path = f'{target_folder_path}/'+f"{note_name}.md"
-            if current_file_path != destination_path:
-                shutil.move(current_file_path, destination_path)
-                memo_file_paths[note_name] = destination_path
-
-        except:
-            # print(f'Fix key insights section, {note_name}')
-            continue
-
-    for note_name in memo_file_types['extracted_insight']:
-        
-        try:
-            note_type = 'extracted_insight'            
-            current_file_path = memo_file_paths[note_name]        
-            note_meta_data = memo_file_meta_data[note_name]
-            note_topics = note_meta_data[note_name]['topic']
-            
-            topics_list = []
-            fields_list = []
-
-            for topic in note_topics:
-                topic_file_path = memo_file_paths[topic]
-                if topic_file_path:
-                    topic_meta_data = memo_file_meta_data[topic]
-                    topic_type = topic_meta_data[topic]['type']
-                    if topic_type and topic_type[0] == 'topic':
-                            topics_list.append(topic)
-                    elif topic_type and topic_type[0] == 'field':
-                            fields_list.append(topic)
-
-            if len(topics_list) > 1:
-                topics_list_queue = deque(topics_list)
-                selected_topic = None
-                best_fuzzy_match = float('-inf') 
-                while topics_list_queue: 
-                    current_topic = topics_list_queue.pop()
-                    current_ratio = fuzz.ratio(current_topic, note_name)
-                    if current_ratio > best_fuzzy_match:
-                        best_fuzzy_match = current_ratio
-                        selected_topic = current_topic
-            elif len(topics_list) == 1:
-                selected_topic = topics_list[0]
-
-            if len(fields_list) > 1:
-                fields_list_queue = deque(fields_list)
-                selected_field = None
-                best_fuzzy_match = float('-inf')
-                while fields_list_queue:
-                    current_field = fields_list_queue.pop()
-                    current_ratio = fuzz.ratio(current_field, note_name)
-                    if current_ratio > best_fuzzy_match:
-                        best_fuzzy_match = current_ratio
-                        selected_field = current_field
-            elif len(fields_list) == 1:
-                selected_field = fields_list[0]
-
-            target_folder_path = os.path.join(vault_path, extracted_insight_folder_name, selected_field, selected_topic)                
-            if not os.path.exists(target_folder_path):
-                os.makedirs(target_folder_path, exist_ok=True)      
-                    
-            destination_path = f'{target_folder_path}/'+f"{note_name}.md"
-            
-            if current_file_path != destination_path:
-                shutil.move(current_file_path, destination_path)
-                memo_file_paths[note_name] = destination_path
-
-        except:
-            # print(f'Fix extracted insights section, {note_name}')
-            continue
-
-    for note_name in memo_file_types['source']:
-        '''
-        Organize source notes
-        '''
-        try:
-            note_type = 'source'
-
-            current_file_path = memo_file_paths[note_name]
-            note_meta_data = memo_file_meta_data[note_name]
-            note_topics = note_meta_data[note_name]['topic']
-            
-            topics_list = []
-            fields_list = []
-            for topic in note_topics:
-                topic_file_path = memo_file_paths[topic]
-                if topic_file_path:
-                    topic_meta_data = memo_file_meta_data[topic]
-                    topic_type = topic_meta_data[topic]['type']
-                    if topic_type and topic_type[0] == 'topic':
-                            topics_list.append(topic)
-                    elif topic_type and topic_type[0] == 'field':
-                            fields_list.append(topic)
-
-            if len(topics_list) > 1:
-                topics_list_queue = deque(topics_list)
-                selected_topic = None
-                best_fuzzy_match = float('-inf')
-
-                while topics_list_queue:
-                    current_topic = topics_list_queue.pop()
-                    current_ratio = fuzz.ratio(current_topic, note_name)
-                    if current_ratio > best_fuzzy_match:
-                        best_fuzzy_match = current_ratio
-                        selected_topic = current_topic
-            elif len(topics_list) == 1:
-                selected_topic = topics_list[0]
-       
-            if len(fields_list) > 1:
-                fields_list_queue = deque(fields_list)
-                selected_field = None
-                best_fuzzy_match = float('-inf')
-                while fields_list_queue:
-                    current_field = fields_list_queue.pop()
-                    current_ratio = fuzz.ratio(current_field, note_name)
-                    if current_ratio > best_fuzzy_match:
-                        best_fuzzy_match = current_ratio
-                        selected_field = current_field
-            elif len(fields_list) == 1:
-                selected_field = fields_list[0]
-
-            target_folder_path = os.path.join(vault_path, source_folder_name, selected_field, selected_topic)
-            if not os.path.exists(target_folder_path):
-                os.makedirs(target_folder_path, exist_ok=True)      
-            
-            destination_path = f'{target_folder_path}/'+f"{note_name}.md"
-            
-            if current_file_path != destination_path:
-                shutil.move(current_file_path, destination_path)
-                memo_file_paths[note_name] = destination_path
-
-        except:
-            # print(f'Fix source section, {note_name}')
-            continue
+    if 'key_insight' in memo_file_types:
+        for note_name in memo_file_types['key_insight']:
+            try:
+                note_type = 'key_insight'
                 
-    for note_name in memo_file_types['producer']:
-    
-        try:
-            note_type = 'producer'
-            current_file_path = memo_file_paths[note_name]       
-            note_meta_data = memo_file_meta_data[note_name]
-            
-            target_folder_path = os.path.join(vault_path, producer_folder_name)            
-            if not os.path.exists(target_folder_path):
-                os.makedirs(target_folder_path, exist_ok=True)      
-            
-            destination_path = f'{target_folder_path}/'+f"{note_name}.md"
-            
-            if current_file_path != destination_path:
-                shutil.move(current_file_path, destination_path)
-                memo_file_paths[note_name] = destination_path
+                current_file_path = memo_file_paths[note_name]
+                note_meta_data = memo_file_meta_data[note_name]
+                note_topics = note_meta_data[note_name]['topic']
+                
+                topics_list = []
+                fields_list = []
+                for topic in note_topics:
+                    topic_meta_data = memo_file_meta_data[topic]
+                    topic_type = topic_meta_data[topic]['type']
+                    if topic_type and topic_type[0] == 'topic':
+                        topics_list.append(topic)
+                    if topic_type and topic_type[0] == 'field':
+                        fields_list.append(topic)
 
-        except:
-            # print(f'Fix producer section, {note_name}')
-            continue
+                if len(topics_list) > 1:
+                    topics_list_queue = deque(topics_list)
+                    selected_topic = None
+                    best_fuzzy_match = float('-inf')
+                    while topics_list_queue:
+                        current_topic = topics_list_queue.pop()
+                        current_ratio = fuzz.ratio(current_topic, note_name)
+                        if current_ratio > best_fuzzy_match:
+                            best_fuzzy_match = current_ratio
+                            selected_topic = current_topic
+                elif len(topics_list) == 1:
+                    selected_topic = topics_list[0]
+
+                if len(fields_list) > 1:
+                    fields_list_queue = deque(fields_list)
+                    selected_field = None
+                    best_fuzzy_match = float('-inf')
+                    while fields_list_queue:
+                        current_field = fields_list_queue.pop()
+                        current_ratio = fuzz.ratio(current_field, note_name)
+                        if current_ratio > best_fuzzy_match:
+                            best_fuzzy_match = current_ratio
+                            selected_field = current_field
+                elif len(fields_list) == 1:
+                    selected_field = fields_list[0]
+
+                target_folder_path = os.path.join(vault_path, key_insight_folder_name, selected_field, selected_topic)                
+                if not os.path.exists(target_folder_path):
+                    os.makedirs(target_folder_path, exist_ok=True)      
+                
+                destination_path = f'{target_folder_path}/'+f"{note_name}.md"
+                if current_file_path != destination_path:
+                    shutil.move(current_file_path, destination_path)
+                    memo_file_paths[note_name] = destination_path
+
+            except:
+                # print(f'Fix key insights section, {note_name}')
+                continue
+
+    if 'extracted_insight' in memo_file_types:
+        for note_name in memo_file_types['extracted_insight']:
+            try:
+                note_type = 'extracted_insight'            
+                current_file_path = memo_file_paths[note_name]        
+                note_meta_data = memo_file_meta_data[note_name]
+                note_topics = note_meta_data[note_name]['topic']
+                
+                topics_list = []
+                fields_list = []
+
+                for topic in note_topics:
+                    topic_file_path = memo_file_paths[topic]
+                    if topic_file_path:
+                        topic_meta_data = memo_file_meta_data[topic]
+                        topic_type = topic_meta_data[topic]['type']
+                        if topic_type and topic_type[0] == 'topic':
+                                topics_list.append(topic)
+                        elif topic_type and topic_type[0] == 'field':
+                                fields_list.append(topic)
+
+                if len(topics_list) > 1:
+                    topics_list_queue = deque(topics_list)
+                    selected_topic = None
+                    best_fuzzy_match = float('-inf') 
+                    while topics_list_queue: 
+                        current_topic = topics_list_queue.pop()
+                        current_ratio = fuzz.ratio(current_topic, note_name)
+                        if current_ratio > best_fuzzy_match:
+                            best_fuzzy_match = current_ratio
+                            selected_topic = current_topic
+                elif len(topics_list) == 1:
+                    selected_topic = topics_list[0]
+
+                if len(fields_list) > 1:
+                    fields_list_queue = deque(fields_list)
+                    selected_field = None
+                    best_fuzzy_match = float('-inf')
+                    while fields_list_queue:
+                        current_field = fields_list_queue.pop()
+                        current_ratio = fuzz.ratio(current_field, note_name)
+                        if current_ratio > best_fuzzy_match:
+                            best_fuzzy_match = current_ratio
+                            selected_field = current_field
+                elif len(fields_list) == 1:
+                    selected_field = fields_list[0]
+
+                target_folder_path = os.path.join(vault_path, extracted_insight_folder_name, selected_field, selected_topic)                
+                if not os.path.exists(target_folder_path):
+                    os.makedirs(target_folder_path, exist_ok=True)      
+                        
+                destination_path = f'{target_folder_path}/'+f"{note_name}.md"
+                
+                if current_file_path != destination_path:
+                    shutil.move(current_file_path, destination_path)
+                    memo_file_paths[note_name] = destination_path
+
+            except:
+                # print(f'Fix extracted insights section, {note_name}')
+                continue
+
+    if 'source' in memo_file_types:
+        for note_name in memo_file_types['source']:
+            try:
+                note_type = 'source'
+
+                current_file_path = memo_file_paths[note_name]
+                note_meta_data = memo_file_meta_data[note_name]
+                note_topics = note_meta_data[note_name]['topic']
+                
+                topics_list = []
+                fields_list = []
+                for topic in note_topics:
+                    topic_file_path = memo_file_paths[topic]
+                    if topic_file_path:
+                        topic_meta_data = memo_file_meta_data[topic]
+                        topic_type = topic_meta_data[topic]['type']
+                        if topic_type and topic_type[0] == 'topic':
+                                topics_list.append(topic)
+                        elif topic_type and topic_type[0] == 'field':
+                                fields_list.append(topic)
+
+                if len(topics_list) > 1:
+                    topics_list_queue = deque(topics_list)
+                    selected_topic = None
+                    best_fuzzy_match = float('-inf')
+
+                    while topics_list_queue:
+                        current_topic = topics_list_queue.pop()
+                        current_ratio = fuzz.ratio(current_topic, note_name)
+                        if current_ratio > best_fuzzy_match:
+                            best_fuzzy_match = current_ratio
+                            selected_topic = current_topic
+                elif len(topics_list) == 1:
+                    selected_topic = topics_list[0]
+        
+                if len(fields_list) > 1:
+                    fields_list_queue = deque(fields_list)
+                    selected_field = None
+                    best_fuzzy_match = float('-inf')
+                    while fields_list_queue:
+                        current_field = fields_list_queue.pop()
+                        current_ratio = fuzz.ratio(current_field, note_name)
+                        if current_ratio > best_fuzzy_match:
+                            best_fuzzy_match = current_ratio
+                            selected_field = current_field
+                elif len(fields_list) == 1:
+                    selected_field = fields_list[0]
+
+                target_folder_path = os.path.join(vault_path, source_folder_name, selected_field, selected_topic)
+                if not os.path.exists(target_folder_path):
+                    os.makedirs(target_folder_path, exist_ok=True)      
+                
+                destination_path = f'{target_folder_path}/'+f"{note_name}.md"
+                
+                if current_file_path != destination_path:
+                    shutil.move(current_file_path, destination_path)
+                    memo_file_paths[note_name] = destination_path
+
+            except:
+                # print(f'Fix source section, {note_name}')
+                continue
+                
+    if 'producer' in memo_file_types:
+        for note_name in memo_file_types['producer']:
+            try:
+                note_type = 'producer'
+                current_file_path = memo_file_paths[note_name]       
+                note_meta_data = memo_file_meta_data[note_name]
+                
+                target_folder_path = os.path.join(vault_path, producer_folder_name)            
+                if not os.path.exists(target_folder_path):
+                    os.makedirs(target_folder_path, exist_ok=True)      
+                
+                destination_path = f'{target_folder_path}/'+f"{note_name}.md"
+                
+                if current_file_path != destination_path:
+                    shutil.move(current_file_path, destination_path)
+                    memo_file_paths[note_name] = destination_path
+
+            except:
+                # print(f'Fix producer section, {note_name}')
+                continue
                 
     return True
 
@@ -546,22 +546,19 @@ def delete_circular_topics_call(memo_file_paths, memo_file_meta_data):
 
 def delete_empty_folders(memo_folder_paths):
     """
-    Deletes empty folders from the vault.
+    Deletes empty folders from the vault, but leaves core folders intact.
 
-    Helper function that traverses the vault and deletes folders that are empty.
+    Helper function that traverses the vault and deletes folders that are empty, except for those specified 
+    in CORE_FOLDERS.
 
     Parameters
     ----------
     - memo_folder_paths (list): A list containing the paths of the folders to check.
-
-    Note:
-    The function currently uses a globally defined variable `vault_path` which should be passed as an argument 
-    or documented for clarity.
     """
     for root, dirs, files in os.walk(vault_path, topdown=False):
         for name in dirs:
             dir_path = os.path.join(root, name)
-            if not os.listdir(dir_path):
+            if not os.listdir(dir_path) and name not in CORE_FOLDERS:
                 os.rmdir(dir_path)
 
 # Call main functions

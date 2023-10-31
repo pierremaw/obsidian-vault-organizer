@@ -11,8 +11,13 @@
             "id": "c06b9f8cd869c92d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "6 Extracted Insights/AI/Neural Networks/Fascinating.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
             }
           }
         ]
@@ -90,6 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "6 Extracted Insights/AI/Neural Networks/Fascinating.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -106,6 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "6 Extracted Insights/AI/Neural Networks/Fascinating.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -128,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Finance.md"
+                "file": "6 Extracted Insights/AI/Neural Networks/Fascinating.md"
               }
             }
           },
@@ -169,43 +176,44 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "a594f7207f43c74b",
+  "active": "c06b9f8cd869c92d",
   "lastOpenFiles": [
+    "_templates/extracted insight.md",
+    "6 Extracted Insights/Fascinating.md",
+    "6 Extracted Insights/AI/Neural Networks/Fascinating.md",
+    "6 Extracted Insights/AI/Neural Networks",
+    "6 Extracted Insights/AI",
+    "_templates/key insight.md",
+    "4 Sources/Source.md",
+    "1 Fields/Science/Science.md",
+    "Science.md",
+    "Science.md",
+    "Science.md",
+    "3 Producers/Pierre Maw.md",
+    "4 Sources",
+    "4 Sources",
+    "4 Sources/Computer Science/Web Technology/source.md",
+    "3 Producers/test.md",
+    "Science.md",
+    "Science.md",
+    "1 Fields/Wealth/Wealth.md",
+    "1 Fields/Science",
+    "Finance.md",
+    "2 Topics/Neural Networks",
+    "2 Topics/Machine Learning/Supervised Learning",
+    "2 Topics/Machine Learning",
+    "2 Topics/Deep Learn",
+    "2 Topics/Systems",
+    "1 Fields/AI/Systems/Systems.md",
+    "Systems.md",
+    "_scripts/Systems.md",
     "_templates/topic.md",
     "_templates/field.md",
     "1 Fields/topic/topic.md",
-    "1 Fields/topic",
     "1 Fields/field/field.md",
-    "1 Fields/field",
-    "2 Topics/topic",
     "1 Fields/AI/Deep Learn/Deep Learn.md",
-    "1 Fields/AI/Deep Learn",
-    "2 Topics/Deep Learn",
     "1 Fields/Deep Learn/Deep Learn.md",
-    "1 Fields/Deep Learn",
     "3 Producers/Deep Learn.md",
-    "2 Topics/Programming languages/Python Testing Frameworks",
-    "2 Topics/Programming languages/Programming Model",
-    "2 Topics/Programming Concepts/Variable",
-    "2 Topics/Programming Concepts/Testing in Programming",
-    "1 Fields/AI/Robotics/Robotics.md",
-    "3 Producers/Pierre Maw.md",
-    "3 Producers/test.md",
-    "4 Sources/Computer Science/Web Technology/source.md",
-    "6 Extracted Insights/Computer Science/Web Technology/extracted insight.md",
-    "5 Key Insights/Computer Science/Web Technology/key insight.md",
-    "1 Fields/Finance/Finance.md",
-    "8 Daily/Prompt - Code Insights (!c).md",
-    "8 Daily/Prompt - Written Content (!w).md",
-    "8 Daily/Prompt - Learning Programme (!p).md",
-    "8 Daily/Prompt - Logic (!l).md",
-    "8 Daily/Prompt - 3 Insights (!3).md",
-    "8 Daily/Prompt - Guide (!g).md",
-    "8 Daily/Prompt - Information Tree (!i).md",
-    "1 Fields/Physics/Theory of Relativity/Theory of Relativity.md",
-    "1 Fields/Physics/Theory of Relativity/Special Relativity/Special Relativity.md",
-    "1 Fields/Trading/Centralized Exchanges/Order Book/Order Book.md",
-    "1 Fields/Trading/Centralized Exchanges/Centralized Exchanges.md",
     "7 Canvas/JavaScript MindMap.canvas",
     "7 Canvas/Vyper MindMap.canvas",
     "7 Canvas/XPath & Selenium.canvas",

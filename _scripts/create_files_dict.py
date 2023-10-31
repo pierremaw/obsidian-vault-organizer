@@ -38,7 +38,6 @@ def create_files_dict(directory: str) -> dict:
     """
     memo_file_paths, memo_file_meta_data, memo_file_types, memo_folder_paths = {}, {}, {}, {}
 
-
     for dirpath, dirnames, filenames in os.walk(directory):
         if template_dir in os.path.split(dirpath):
             continue

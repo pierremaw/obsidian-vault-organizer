@@ -1,4 +1,3 @@
-
 import re
 import os
 import os.path
@@ -18,7 +17,8 @@ def delete_circular_topics(file_path: str, memo_file_meta_data: dict) -> None:
     - file_path (str): The path to the file in which circular topics should be deleted.
     - memo_file_meta_data (dict): Dictionary containing metadata for the memo files.
 
-    Returns:
+    Returns
+    -------
     - None: The function modifies the content of the file in-place and does not return any value.
     """
     

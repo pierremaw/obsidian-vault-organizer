@@ -56,6 +56,6 @@ Make sure you are in the root directory that contains the `_scripts` folder. The
 python _scripts/vault_organizer.py
 ```
 
-## Notes
+## Tip
 
 - Make sure to backup your vault before running the script.

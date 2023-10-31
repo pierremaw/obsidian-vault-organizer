@@ -1,6 +1,6 @@
 # Vault Organizer README
 
-https://github.com/pierremaw/Obsidian-Vault-Organizer/assets/99075249/10f8bc1d-8dfe-4820-b28c-46b2b5f67248
+https://github.com/pierremaw/Obsidian-Vault-Organizer/assets/99075249/46bac793-d696-49f3-b0d8-d096e24f1238
 
 ## Introduction
 

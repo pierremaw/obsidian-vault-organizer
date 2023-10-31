@@ -1,5 +1,7 @@
 # Vault Organizer README
 
+https://github.com/pierremaw/Obsidian-Vault-Organizer/assets/99075249/35a4d679-f439-44d7-91f3-65764d81896d
+
 ## Introduction
 The Vault Organizer is a Python utility script aimed at organizing, updating, and maintaining a structured file vault. This vault is composed of markdown memo files with distinct types and metadata. The script provides functionalities such as:
 - Moving files based on their types and metadata to respective folders.

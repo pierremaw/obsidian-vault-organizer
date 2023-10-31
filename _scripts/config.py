@@ -1,5 +1,5 @@
 vault_path = "./"
-template_folder_name = "_templates/"
-field_folder_name = "1 Fields/"
+template_folder = "_templates/"
+field_folder = "1 Fields/"
 topic_folder = "2 Topics/"
 key_insights_folder = "3 Key Insights/"

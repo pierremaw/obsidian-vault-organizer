@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1 Fields/AI/AI.md",
+                "file": "1 Fields/AI/Neural Networks/Neural Networks.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1 Fields/AI/AI.md",
+                "file": "1 Fields/AI/Neural Networks/Neural Networks.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1 Fields/AI/AI.md",
+                "file": "1 Fields/AI/Neural Networks/Neural Networks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1 Fields/AI/AI.md"
+                "file": "1 Fields/AI/Neural Networks/Neural Networks.md"
               }
             }
           },
@@ -176,21 +176,25 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "a594f7207f43c74b",
+  "active": "99ea2c79ee1d9355",
   "lastOpenFiles": [
-    "README.md",
-    "_scripts/vault_organizer.py",
-    "1 Fields/AI/Supervised Learning/Supervised Learning.md",
+    "3 Key Insights/Key Insight 1.md",
+    "Neural Networks.md",
     "1 Fields/AI/Neural Networks/Neural Networks.md",
-    "1 Fields/AI/AI.md",
+    "1 Fields/Writing/Writing.md",
     "1 Fields/AI/Machine Learning/Machine Learning.md",
     "1 Fields/AI/Deep Learning/Deep Learning.md",
+    "1 Fields/AI/Supervised Learning/Supervised Learning.md",
+    "1 Fields/Computer Science/Computer Science.md",
+    "1 Fields/System Design/System Design.md",
+    "1 Fields/AI/AI.md",
+    "README.md",
+    "Machine Learning.md",
+    "_scripts/vault_organizer.py",
     "Supervised Learning.md",
     "2 Topics/Supervised Learning",
     "1 Fields/AI/Supervised Learning",
-    "Machine Learning.md",
     "1 Fields/AI/Machine Learning",
-    "3 Key Insights/Key Insight 1.md",
     "1 Fields/AI/Machine Learning/Unsupervised Learning/Unsupervised Learning.md",
     "Deep Learning.md",
     "2 Topics/Deep Learning",
@@ -209,10 +213,6 @@
     "1 Fields/AI/Machine Learning/reinforcement learning/reinforcement learning.md",
     "reinforcement learning.md",
     "2 Topics/Machine Learning/reinforcement learning",
-    "_templates/Topic.md",
-    "_templates/Key Insight.md",
-    "_templates/Field.md",
-    "_templates/Daily.md",
     "7 Canvas/JavaScript MindMap.canvas",
     "7 Canvas/Vyper MindMap.canvas",
     "7 Canvas/XPath & Selenium.canvas",

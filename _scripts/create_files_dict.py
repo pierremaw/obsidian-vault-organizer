@@ -1,9 +1,9 @@
 import os
 from collections import defaultdict
 from meta_data_search import _meta_data_search
-from config import vault_path, template_folder_name
+from config import vault_path, template_folder
 
-template_dir = template_folder_name.rstrip('/')
+template_dir = template_folder.rstrip('/')
 
 def add_note(queue: defaultdict, note: str, type_: str) -> None:
     """

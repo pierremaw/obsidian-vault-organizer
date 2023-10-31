@@ -22,9 +22,9 @@ The Vault Organizer is a Python utility script aimed at organizing, updating, an
 ## Configuration
 Before running the script, ensure you've configured your vault settings in the `config.py` file:
 - `vault_path`: The path to the root directory of your vault.
-- `field_folder_name`: The name of the folder containing field notes.
+- `field_folder`: The name of the folder containing field notes.
 - `topic_folder`: The name of the folder containing topic notes.
-- `template_folder_name`: The name of the folder containing templates.
+- `template_folder`: The name of the folder containing templates.
 
 ## Key Components & Their Functions
 

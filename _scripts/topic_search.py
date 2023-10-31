@@ -2,7 +2,7 @@ import re
 import os
 import os.path
 from read_files import read_file
-from config import template_folder_name
+from config import template_folder
 
 def topic_search(file_path: str, memo_file_paths: dict, memo_file_meta_data: dict) -> list:
     """
@@ -23,13 +23,13 @@ def topic_search(file_path: str, memo_file_paths: dict, memo_file_meta_data: dic
 
     Notes
     -----
-    The function expects certain folder names like 'template_folder_name' to be 
+    The function expects certain folder names like 'template_folder' to be 
     globally defined. Similarly, functions like 'read_file' should be defined elsewhere 
     in the code for this function to work correctly.
     """
 
     # Skip processing if the file is in the template folder
-    if template_folder_name in file_path:
+    if template_folder in file_path:
         return
 
     memo = {}

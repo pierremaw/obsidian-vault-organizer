@@ -8,7 +8,7 @@ from create_files_dict import create_files_dict
 
 from topic_search import topic_search
 from delete_circular_topics import delete_circular_topics
-from config import vault_path, field_folder_name, topic_folder, template_folder_name
+from config import vault_path, field_folder, topic_folder, template_folder
 
 # Define the core folders that are protected from deletion
 CORE_FOLDERS = [
@@ -47,7 +47,7 @@ def vault_organizer(root_dir):
     if 'field' in memo_file_types:
         for note_name in memo_file_types['field']:
             try:
-                field_instance_folder = f"{vault_path}{field_folder_name}{note_name}/"
+                field_instance_folder = f"{vault_path}{field_folder}{note_name}/"
                 check_folder_path = os.path.isdir(field_instance_folder)
                 if not check_folder_path:
                     os.mkdir(field_instance_folder)
@@ -80,7 +80,7 @@ def vault_organizer(root_dir):
                         best_fuzzy_match = current_ratio
                         selected_field = current_field
 
-                target_folder_path = os.path.join(vault_path, field_folder_name, selected_field, note_name)
+                target_folder_path = os.path.join(vault_path, field_folder, selected_field, note_name)
                 if not os.path.exists(target_folder_path):
                     os.makedirs(target_folder_path, exist_ok=True)      
 
@@ -99,7 +99,6 @@ def vault_organizer(root_dir):
                 # print(f'Fix topic section, {note_name}')
                 continue
         
-                
     return True
 
 def update_topics(memo_file_paths, memo_file_meta_data):

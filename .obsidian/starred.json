@@ -1,9 +1,6 @@
 {
   "items": [
     {
-      "type": "search",
-      "title": "tag:#subtopic",
-      "query": "tag:#subtopic"
     }
   ]
 }

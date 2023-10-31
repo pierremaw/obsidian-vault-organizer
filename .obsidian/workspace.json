@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "ead918ce2fbbadda",
+        "id": "876c9181bb2ec67f",
         "type": "tabs",
         "children": [
           {
-            "id": "f15f4097ab73dd19",
+            "id": "99ea2c79ee1d9355",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_templates/Note.md",
+                "file": "1 Fields/AI/AI.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#subtopic",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_templates/Note.md",
+                "file": "1 Fields/AI/AI.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_templates/Note.md",
+                "file": "1 Fields/AI/AI.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_templates/Note.md"
+                "file": "1 Fields/AI/AI.md"
               }
             }
           },
@@ -156,7 +156,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -176,44 +176,42 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "f15f4097ab73dd19",
+  "active": "99ea2c79ee1d9355",
   "lastOpenFiles": [
-    "_templates/Sub Topic.md",
+    "1 Fields/AI/Supervised Learning/Supervised Learning.md",
+    "1 Fields/AI/Neural Networks/Neural Networks.md",
+    "1 Fields/AI/AI.md",
+    "1 Fields/AI/Machine Learning/Machine Learning.md",
+    "1 Fields/AI/Deep Learning/Deep Learning.md",
+    "Supervised Learning.md",
+    "2 Topics/Supervised Learning",
+    "1 Fields/AI/Supervised Learning",
+    "Machine Learning.md",
+    "1 Fields/AI/Machine Learning",
+    "3 Key Insights/Key Insight 1.md",
+    "1 Fields/AI/Machine Learning/Unsupervised Learning/Unsupervised Learning.md",
+    "Deep Learning.md",
+    "2 Topics/Deep Learning",
+    "1 Fields/AI/Deep Learning",
+    "Deep Learn.md",
     "_templates/Note.md",
+    "AI note.md",
+    "2 Topics/Machine Learning/Supervised Learning",
+    "Robotics.md",
+    "2 Topics/Robotics",
+    "1 Fields/AI/Robotics/Robotics.md",
+    "1 Fields/AI/Robotics",
+    "Machine learning note.md",
+    "_templates/Sub Topic.md",
     "_templates/Micro Topic.md",
     "1 Fields/AI/Machine Learning/reinforcement learning/reinforcement learning.md",
     "reinforcement learning.md",
     "2 Topics/Machine Learning/reinforcement learning",
     "1 Fields/AI/Machine Learning/reinforcement learning",
     "_templates/Topic.md",
-    "3 Key Insights/Key Insight 1.md",
-    "Robotics.md",
-    "2 Topics/Robotics",
-    "1 Fields/AI/Robotics/Robotics.md",
-    "1 Fields/AI/Robotics",
-    "Untitled",
     "_templates/Key Insight.md",
     "_templates/Field.md",
     "_templates/Daily.md",
-    "_templates/note.md",
-    "_templates/microtopic.md",
-    "3 Key Insights",
-    "3 Producers/Pierre Maw.md",
-    "1 Fields/Computer Science/Computer Science.md",
-    "3 Producers",
-    "2 Topics/Neural Networks",
-    "2 Topics/Machine Learning/Supervised Learning",
-    "2 Topics/Machine Learning",
-    "1 Fields/Science/Science.md",
-    "System Design.md",
-    "1 Fields/System Design/System Design.md",
-    "1 Fields/System Design/Requirements/Requirements.md",
-    "Requirements.md",
-    "Requirements.md",
-    "5 Key Insights/AI Key Insight.md",
-    "6 Extracted Insights/AI/Machine Learning/Machine Learning Extracted Insight.md",
-    "Deep Learning.md",
-    "1 Fields/Deep Learning/Deep Learning.md",
     "7 Canvas/JavaScript MindMap.canvas",
     "7 Canvas/Vyper MindMap.canvas",
     "7 Canvas/XPath & Selenium.canvas",

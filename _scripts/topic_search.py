@@ -11,15 +11,18 @@ def topic_search(file_path: str, memo_file_paths: dict, memo_file_meta_data: dic
     Given a file path, this function identifies and formats the associated topics, ensuring 
     to retrieve the most relevant ones based on distance from the source file.
 
-    Parameters:
+    Parameters
+    ----------
     - file_path (str): The path to the file of interest.
     - memo_file_paths (dict): A dictionary containing file paths indexed by their associated names.
     - memo_file_meta_data (dict): A dictionary containing meta-data associated with file names.
 
-    Returns:
+    Returns
+    -------
     - list: A list of unique topic names. Returns None if no topics are found.
 
-    Notes:
+    Notes
+    -----
     The function expects certain folder names like 'template_folder_name' to be 
     globally defined. Similarly, functions like 'read_file' should be defined elsewhere 
     in the code for this function to work correctly.
@@ -82,11 +85,28 @@ def topic_search(file_path: str, memo_file_paths: dict, memo_file_meta_data: dic
     return unique_topics
 
 def _topic_search(file_path, distance, memo, memo_file_paths, memo_file_meta_data):
-    '''
-    Helper function for topic_search.
-    This helper function does a DFS for the topics connected to a file and returns a tuple list
-    that contains the topic and the distance from the source file
-    '''
+    """
+    Conduct a Depth-First Search (DFS) on topics linked to a file.
+    
+    Given a file path, this function explores the associated topics using a DFS approach.
+    It retrieves a dictionary of topics mapped to their distances from the source file.
+
+    Parameters
+    ----------
+    - file_path (str): The path to the file of interest.
+    - distance (int): Current distance from the source file.
+    - memo (dict): A dictionary used for memoization to store processed file names.
+    - memo_file_paths (dict): A dictionary containing file paths indexed by their associated names.
+    - memo_file_meta_data (dict): A dictionary containing meta-data associated with file names.
+
+    Returns
+    -------
+    - dict: A dictionary mapping topic names to their respective distances. Returns None in case of exceptions.
+
+    Note
+    ----
+    The function utilizes regular expressions to extract topic names.
+    """
     
     try:
         file_name = os.path.basename(file_path)

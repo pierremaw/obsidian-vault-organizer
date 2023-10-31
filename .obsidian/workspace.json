@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3 Key Insights/Key Insight 1.md",
+                "file": "_templates/Note.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "3 Key Insights/Key Insight 1.md",
+                "file": "_templates/Note.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "3 Key Insights/Key Insight 1.md",
+                "file": "_templates/Note.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "3 Key Insights/Key Insight 1.md"
+                "file": "_templates/Note.md"
               }
             }
           },
@@ -176,15 +176,26 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "a594f7207f43c74b",
+  "active": "f15f4097ab73dd19",
   "lastOpenFiles": [
-    "Untitled",
-    "_templates/Key Insight.md",
+    "_templates/Sub Topic.md",
+    "_templates/Note.md",
+    "_templates/Micro Topic.md",
+    "1 Fields/AI/Machine Learning/reinforcement learning/reinforcement learning.md",
+    "reinforcement learning.md",
+    "2 Topics/Machine Learning/reinforcement learning",
+    "1 Fields/AI/Machine Learning/reinforcement learning",
     "_templates/Topic.md",
     "3 Key Insights/Key Insight 1.md",
+    "Robotics.md",
+    "2 Topics/Robotics",
+    "1 Fields/AI/Robotics/Robotics.md",
+    "1 Fields/AI/Robotics",
+    "Untitled",
+    "_templates/Key Insight.md",
     "_templates/Field.md",
     "_templates/Daily.md",
-    "_templates/subtopic.md",
+    "_templates/note.md",
     "_templates/microtopic.md",
     "3 Key Insights",
     "3 Producers/Pierre Maw.md",
@@ -193,27 +204,16 @@
     "2 Topics/Neural Networks",
     "2 Topics/Machine Learning/Supervised Learning",
     "2 Topics/Machine Learning",
-    "2 Topics/Deep Learn",
-    "3 Producers",
     "1 Fields/Science/Science.md",
-    "3 Producers",
     "System Design.md",
     "1 Fields/System Design/System Design.md",
-    "1 Fields/System Design",
     "1 Fields/System Design/Requirements/Requirements.md",
     "Requirements.md",
-    "2 Topics/Requirements",
     "Requirements.md",
     "5 Key Insights/AI Key Insight.md",
     "6 Extracted Insights/AI/Machine Learning/Machine Learning Extracted Insight.md",
     "Deep Learning.md",
     "1 Fields/Deep Learning/Deep Learning.md",
-    "6 Extracted Insights/Machine Learning Extracted Insight.md",
-    "6 Extracted Insights/AI/Neural Networks/Fascinating.md",
-    "6 Extracted Insights/Fascinating.md",
-    "4 Sources/Source.md",
-    "Science.md",
-    "Science.md",
     "7 Canvas/JavaScript MindMap.canvas",
     "7 Canvas/Vyper MindMap.canvas",
     "7 Canvas/XPath & Selenium.canvas",

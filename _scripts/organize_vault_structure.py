@@ -178,13 +178,13 @@ def organize_vault_structure(root_dir):
                 # print(f'Fix topic section, {note_name}')
                 continue
     
-    if 'microtopic' in memo_file_types:
-        for note_name in memo_file_types['microtopic']:
+    if 'note' in memo_file_types:
+        for note_name in memo_file_types['note']:
             try:
                 note_great_grandparent_type = 'field'
                 note_grandparent_type = 'topic'
                 note_parent_type = 'subtopic'
-                note_type = 'microtopic'
+                note_type = 'note'
             
                 current_note_file_path = memo_file_paths[note_name]
                 note_meta_data = memo_file_meta_data[note_name]
@@ -288,7 +288,7 @@ def organize_vault_structure(root_dir):
                     memo_file_paths[note_name] = destination_path
         
             except:
-                # print(f'Fix microtopic section, {note_name}')
+                # print(f'Fix note section, {note_name}')
                 continue
                 
     return True

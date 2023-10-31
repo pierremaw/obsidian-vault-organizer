@@ -7,19 +7,15 @@ from collections import deque
 from create_files_dict import create_files_dict
 
 from topic_search import topic_search
-from producer_search import producer_search
 from delete_circular_topics import delete_circular_topics
-from config import vault_path, field_folder_name, topic_folder_name, producer_folder_name, source_folder_name, key_insight_folder_name, extracted_insight_folder_name, template_folder_name
+from config import vault_path, field_folder_name, topic_folder, template_folder_name
 
 # Define the core folders that are protected from deletion
 CORE_FOLDERS = [
     "_templates/",
     "1 Fields/",
     "2 Topics/",
-    "3 Producers/",
-    "4 Sources/",
-    "5 Key Insights/",
-    "6 Extracted Insights/"
+    "3 Key Insights/"
 ]
 
 # Global dictionaries to store memo file paths, metadata, types, and folder paths
@@ -95,7 +91,7 @@ def organize_vault_structure(root_dir):
                     shutil.move(current_file_path, destination_path)
                     memo_file_paths[note_name] = destination_path
 
-                target_folder_path = os.path.join(vault_path, topic_folder_name, note_name)
+                target_folder_path = os.path.join(vault_path, topic_folder, note_name)
                 if not os.path.exists(target_folder_path):
                     os.makedirs(target_folder_path, exist_ok=True)    
         
@@ -174,7 +170,7 @@ def organize_vault_structure(root_dir):
                     shutil.move(current_file_path, destination_path)
                     memo_file_paths[note_name] = destination_path
             
-                target_folder_path = os.path.join(vault_path, topic_folder_name, selected_topic, note_name)
+                target_folder_path = os.path.join(vault_path, topic_folder, selected_topic, note_name)
                 if not os.path.exists(target_folder_path):
                     os.makedirs(target_folder_path, exist_ok=True)      
         
@@ -295,27 +291,6 @@ def organize_vault_structure(root_dir):
                 # print(f'Fix microtopic section, {note_name}')
                 continue
                 
-    if 'producer' in memo_file_types:
-        for note_name in memo_file_types['producer']:
-            try:
-                note_type = 'producer'
-                current_file_path = memo_file_paths[note_name]       
-                note_meta_data = memo_file_meta_data[note_name]
-                
-                target_folder_path = os.path.join(vault_path, producer_folder_name)            
-                if not os.path.exists(target_folder_path):
-                    os.makedirs(target_folder_path, exist_ok=True)      
-                
-                destination_path = f'{target_folder_path}/'+f"{note_name}.md"
-                
-                if current_file_path != destination_path:
-                    shutil.move(current_file_path, destination_path)
-                    memo_file_paths[note_name] = destination_path
-
-            except:
-                # print(f'Fix producer section, {note_name}')
-                continue
-                
     return True
 
 def update_topics(memo_file_paths, memo_file_meta_data):
@@ -331,23 +306,6 @@ def update_topics(memo_file_paths, memo_file_meta_data):
     """
     for k, v in memo_file_paths.items():
         topic_search(v, memo_file_paths, memo_file_meta_data)
-
-def update_producers(memo_file_paths, memo_file_meta_data):
-    """
-    Updates producers for the provided memo files, excluding those in the template folder.
-
-    Iterates over the provided memo files and updates their producers by calling the `producer_search` function,
-    but skips files that are located in the template folder.
-
-    Parameters
-    ----------
-    - memo_file_paths (dict): A dictionary containing the paths of the memo files.
-    - memo_file_meta_data (dict): A dictionary containing metadata for the memo files.
-    """
-    for v in memo_file_paths.values():
-        if template_folder_name in v:
-            continue
-        producer_search(v, memo_file_paths, memo_file_meta_data)
 
 def delete_circular_topics_call(memo_file_paths, memo_file_meta_data):
     """
@@ -388,7 +346,6 @@ def delete_empty_folders(memo_folder_paths):
 update_memo_variables(vault_path)
 delete_empty_folders(memo_folder_paths)
 update_topics(memo_file_paths, memo_file_meta_data)
-update_producers(memo_file_paths, memo_file_meta_data)
 delete_circular_topics_call(memo_file_paths, memo_file_meta_data)
 update_memo_variables(vault_path)
 organize_vault_structure(vault_path)

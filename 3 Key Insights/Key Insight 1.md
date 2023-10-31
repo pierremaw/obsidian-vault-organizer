@@ -1,7 +1,7 @@
 
 ___
 Producer: [[Pierre Maw]]
-Type: #extracted_insight 
+Type: #insight
 Topics: 
 Reference: 
 

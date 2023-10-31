@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1 Fields/Computer Science/Computer Science.md",
+                "file": "3 Key Insights/Key Insight 1.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1 Fields/Computer Science/Computer Science.md",
+                "file": "3 Key Insights/Key Insight 1.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1 Fields/Computer Science/Computer Science.md",
+                "file": "3 Key Insights/Key Insight 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1 Fields/Computer Science/Computer Science.md"
+                "file": "3 Key Insights/Key Insight 1.md"
               }
             }
           },
@@ -176,41 +176,43 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "f15f4097ab73dd19",
+  "active": "a594f7207f43c74b",
   "lastOpenFiles": [
+    "Untitled",
+    "_templates/Key Insight.md",
+    "_templates/Topic.md",
+    "3 Key Insights/Key Insight 1.md",
+    "_templates/Field.md",
+    "_templates/Daily.md",
+    "_templates/subtopic.md",
+    "_templates/microtopic.md",
+    "3 Key Insights",
+    "3 Producers/Pierre Maw.md",
+    "1 Fields/Computer Science/Computer Science.md",
+    "3 Producers",
+    "2 Topics/Neural Networks",
+    "2 Topics/Machine Learning/Supervised Learning",
+    "2 Topics/Machine Learning",
+    "2 Topics/Deep Learn",
+    "3 Producers",
+    "1 Fields/Science/Science.md",
+    "3 Producers",
     "System Design.md",
     "1 Fields/System Design/System Design.md",
     "1 Fields/System Design",
-    "1 Fields/Computer Science/Computer Science.md",
-    "Untitled",
     "1 Fields/System Design/Requirements/Requirements.md",
     "Requirements.md",
     "2 Topics/Requirements",
     "Requirements.md",
-    "1 Fields/System Design/Requirements",
-    "_templates/extracted insight.md",
-    "3 Producers/Pierre Maw.md",
     "5 Key Insights/AI Key Insight.md",
     "6 Extracted Insights/AI/Machine Learning/Machine Learning Extracted Insight.md",
     "Deep Learning.md",
     "1 Fields/Deep Learning/Deep Learning.md",
-    "1 Fields/Deep Learning",
-    "5 Key Insights",
-    "5 Key Insights",
     "6 Extracted Insights/Machine Learning Extracted Insight.md",
-    "6 Extracted Insights/AI/Machine Learning",
-    "6 Extracted Insights/AI",
-    "5 Key Insights/AI/Machine Learning",
     "6 Extracted Insights/AI/Neural Networks/Fascinating.md",
     "6 Extracted Insights/Fascinating.md",
-    "_templates/key insight.md",
     "4 Sources/Source.md",
-    "1 Fields/Science/Science.md",
     "Science.md",
-    "Science.md",
-    "Science.md",
-    "4 Sources/Computer Science/Web Technology/source.md",
-    "3 Producers/test.md",
     "Science.md",
     "7 Canvas/JavaScript MindMap.canvas",
     "7 Canvas/Vyper MindMap.canvas",

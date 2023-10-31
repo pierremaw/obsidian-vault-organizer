@@ -2,7 +2,7 @@ Multi-container application management.
 
 ___
 
-With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.
+With Compose, you use a YAML file to configure your applications services. Then, with a single command, you create and start all the services from your configuration.
 
 ```
 The Compose specification allows one to define a platform-agnostic container based application. Such an application is designed as a set of containers which have to both run together with adequate shared resources and communication channels.

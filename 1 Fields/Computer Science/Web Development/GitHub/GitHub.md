@@ -4,6 +4,6 @@ GitHub uses the [[git]] version control system.
 
 ___
 Type: #subtopic 
-Topics: [[Computer Science]], [[Web Development]], [[git]]
+Topics: [[Computer Science]], [[Web Development]], [[GitHub]], [[git]]
 
 

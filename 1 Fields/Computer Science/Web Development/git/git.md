@@ -4,6 +4,6 @@ https://www.notion.so/pierremaw/git-commands-summary-37d29cb657f04870ab00542ba0f
 
 ___
 Type: #subtopic 
-Topics: [[Computer Science]], [[Web Development]], [[GitHub]]
+Topics: [[Computer Science]], [[Web Development]], [[git]], [[GitHub]]
 
 

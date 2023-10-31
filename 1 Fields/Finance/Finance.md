@@ -1,14 +1,20 @@
-| Category               | Information                                                                                                                                                                                                                                                                          |
-|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Definition             | Finance is the management of money and financial transactions, including investing, borrowing, lending, and budgeting. It encompasses a wide range of activities related to the allocation and use of financial resources.                                                           |
-| Types                  | There are several types of finance, including personal finance, corporate finance, public finance, and international finance. Each type has its own unique characteristics and considerations.                                                                                       |
-| Financial markets      | Financial markets are where financial instruments, such as stocks, bonds, and currencies, are traded. They can be physical locations or electronic platforms, and they facilitate the flow of capital between borrowers and lenders.                                                 |
-| Investment             | Investment involves the purchase of financial assets with the expectation of generating a return, such as capital gains or income. It is a key part of finance and can take many forms, including stocks, bonds, real estate, and commodities.                                       |
-| Risk management        | Risk management is the process of identifying, analyzing, and controlling potential financial risks, such as market risk, credit risk, and operational risk. It is an important consideration in all areas of finance and is essential for ensuring financial stability and success. |
-| Financial analysis     | Financial analysis involves the use of financial data and metrics to evaluate the performance of a company or investment. It includes techniques such as ratio analysis, trend analysis, and financial modeling.                                                                     |
-| Financial planning     | Financial planning involves setting financial goals and creating a plan to achieve them. It includes budgeting, savings, and investment strategies, as well as tax planning and estate planning.                                                                                     |
-| Financial regulation   | Financial regulation is the oversight and enforcement of laws and rules related to financial institutions and transactions. It is designed to protect consumers and ensure the stability of financial markets.                                                                       |
-| Ethical considerations | Finance involves many ethical considerations, such as transparency, fairness, and social responsibility. Practitioners must balance the pursuit of financial gain with the need to act ethically and responsibly.                                                                    |
+| **Finance** | The study of how money is managed, including the investment, distribution, and use of funds. |
+| --- | --- |
+| Where | Banks, stock markets, investment firms, businesses, governments, and households. |
+| When | All the time; financial decisions are made daily, from personal budgeting to billion-dollar deals. |
+| Who | Individuals, financial planners, accountants, CFOs, investors, and bankers. |
+| What | Activities related to budgeting, saving, investing, lending, and forecasting future financial trends. |
+| Why | To ensure economic stability, promote growth, and manage risk while maximizing wealth. |
+| How | Through budgeting, investing, lending, forecasting, and analyzing financial statements and markets. |
+| Basics | Money management, financial planning, and understanding the value of money over time. |
+| Instruments | Stocks, bonds, mutual funds, ETFs, and derivatives. |
+| Concepts | Time value of money, risk and return, diversification, and financial leverage. |
+| Procedures | Creating a budget, analyzing financial statements, and making investment decisions. |
+| Best practices | Diversify investments, live below means, avoid high-interest debt, and regularly review finances. |
+| Role of Banks | Serve as intermediaries, safeguard deposits, provide loans, and facilitate financial transactions. |
+| Risk Management | Process of identifying, assessing, and controlling threats to an organization's capital and earnings. |
+| Summary | Finance is vital in managing money, investing wisely, and ensuring economic stability. It encompasses various instruments, concepts, and procedures aimed at maximizing wealth and managing risks. |
+
 
 ___
 Type: #field

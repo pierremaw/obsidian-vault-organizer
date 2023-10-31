@@ -1,27 +1,14 @@
-'''
-IMPORT PACKAGES
-'''
 import os
 import os.path
 import shutil
 from rapidfuzz import fuzz
 from collections import deque
 
-'''
-IMPORT CREATE DICT FUNCTION
-'''
 from create_files_dict import create_files_dict
 
-'''
-IMPORT HELPER FUNCTIONS
-'''
 from topic_search import topic_search
 from producer_search import producer_search
 from delete_circular_topics import delete_circular_topics
-
-'''
-IMPORT CONFIG VARIABLES
-'''
 from config import vault_path, field_folder_name, topic_folder_name, producer_folder_name, source_folder_name, key_insight_folder_name, extracted_insight_folder_name, template_folder_name
 
 '''
@@ -33,11 +20,16 @@ memo_file_types = {}
 memo_folder_paths = {}
 
 def update_memo_variables(vault_path):
+    """
+    Update memo variables
+    """
     global memo_file_paths, memo_file_meta_data, memo_file_types, memo_folder_paths
     memo_file_paths, memo_file_meta_data, memo_file_types, memo_folder_paths = create_files_dict(vault_path)
 
 def organize_vault_structure(root_dir):
-
+    """
+    Organize vault structure
+    """
     for note_name in memo_file_types['field']:
         try:
             field_instance_folder = f"{vault_path}{field_folder_name}{note_name}/"
@@ -88,7 +80,6 @@ def organize_vault_structure(root_dir):
                 shutil.move(current_file_path, destination_path)
                 memo_file_paths[note_name] = destination_path
 
-            # Create a topic folder for the topic in the topics folder
             target_folder_path = os.path.join(vault_path, topic_folder_name, note_name)
             if not os.path.exists(target_folder_path):
                 os.makedirs(target_folder_path, exist_ok=True)    
@@ -126,19 +117,15 @@ def organize_vault_structure(root_dir):
 
             selected_topic = None
             best_fuzzy_match = float('-inf')
-            
-            '''SELECT THE TOPIC THAT HAS THE HIGHEST FUZZY MATCH'''
             while topic_collection_queue:
                 current_topic = topic_collection_queue.pop()
                 current_ratio = fuzz.ratio(current_topic, note_name)
                 if current_ratio > best_fuzzy_match:
                     best_fuzzy_match = current_ratio
                     selected_topic = current_topic
-
             selected_topic_meta_data = memo_file_meta_data[selected_topic]
             selected_topic_topics = selected_topic_meta_data[selected_topic]['topic']
             
-            '''CREATE A FIELD_COLLECTION FOLDER AND ADD ALL FIELDS TO IT'''
             field_collection = []
             for topic_note in selected_topic_topics:
                 try:
@@ -178,7 +165,6 @@ def organize_vault_structure(root_dir):
         
             '''CREATE A TOPIC FOLDER FOR THE TOPIC IN THE TOPICS FOLDER'''
             target_folder_path = os.path.join(vault_path, topic_folder_name, selected_topic, note_name)
-            # print(f'target folder path os.path.join:  {target_folder_path}')
             if not os.path.exists(target_folder_path):
                 os.makedirs(target_folder_path, exist_ok=True)      
     
@@ -285,10 +271,7 @@ def organize_vault_structure(root_dir):
                         selected_field = current
             elif len(collection) == 1:
                 selected_field = collection[0]
-            
-            '''
-            This target folder path is a path that includes the field folder name, the field name, the topic name, and the subtopic name.
-            '''
+    
             target_folder_path = os.path.join(vault_path, field_folder_name, selected_field, selected_topic, selected_subtopic)
             if not os.path.exists(target_folder_path):
                 os.makedirs(target_folder_path, exist_ok=True)              
@@ -307,7 +290,7 @@ def organize_vault_structure(root_dir):
         
         try:
             note_type = 'key_insight'
-        
+            
             current_file_path = memo_file_paths[note_name]
             note_meta_data = memo_file_meta_data[note_name]
             note_topics = note_meta_data[note_name]['topic']
@@ -351,9 +334,8 @@ def organize_vault_structure(root_dir):
             target_folder_path = os.path.join(vault_path, key_insight_folder_name, selected_field, selected_topic)                
             if not os.path.exists(target_folder_path):
                 os.makedirs(target_folder_path, exist_ok=True)      
-              
-            destination_path = f'{target_folder_path}/'+f"{note_name}.md"
             
+            destination_path = f'{target_folder_path}/'+f"{note_name}.md"
             if current_file_path != destination_path:
                 shutil.move(current_file_path, destination_path)
                 memo_file_paths[note_name] = destination_path
@@ -373,11 +355,8 @@ def organize_vault_structure(root_dir):
             topics_list = []
             fields_list = []
 
-            # get the metadata for the extracted topic to see which one is a topic
             for topic in note_topics:
                 topic_file_path = memo_file_paths[topic]
-    
-                # get the metadata
                 if topic_file_path:
                     topic_meta_data = memo_file_meta_data[topic]
                     topic_type = topic_meta_data[topic]['type']
@@ -389,9 +368,8 @@ def organize_vault_structure(root_dir):
             if len(topics_list) > 1:
                 topics_list_queue = deque(topics_list)
                 selected_topic = None
-                best_fuzzy_match = float('-inf')
-                # do fuzzy match for field
-                while topics_list_queue:
+                best_fuzzy_match = float('-inf') 
+                while topics_list_queue: 
                     current_topic = topics_list_queue.pop()
                     current_ratio = fuzz.ratio(current_topic, note_name)
                     if current_ratio > best_fuzzy_match:
@@ -417,7 +395,6 @@ def organize_vault_structure(root_dir):
             if not os.path.exists(target_folder_path):
                 os.makedirs(target_folder_path, exist_ok=True)      
                     
-            # get the destination folder path
             destination_path = f'{target_folder_path}/'+f"{note_name}.md"
             
             if current_file_path != destination_path:
@@ -443,7 +420,6 @@ def organize_vault_structure(root_dir):
             fields_list = []
             for topic in note_topics:
                 topic_file_path = memo_file_paths[topic]
-                # get the metadata
                 if topic_file_path:
                     topic_meta_data = memo_file_meta_data[topic]
                     topic_type = topic_meta_data[topic]['type']
@@ -456,7 +432,7 @@ def organize_vault_structure(root_dir):
                 topics_list_queue = deque(topics_list)
                 selected_topic = None
                 best_fuzzy_match = float('-inf')
-                # do fuzzy match for field
+
                 while topics_list_queue:
                     current_topic = topics_list_queue.pop()
                     current_ratio = fuzz.ratio(current_topic, note_name)
@@ -465,8 +441,7 @@ def organize_vault_structure(root_dir):
                         selected_topic = current_topic
             elif len(topics_list) == 1:
                 selected_topic = topics_list[0]
-
-            # get the fields in the fields_list and fuzzy match         
+       
             if len(fields_list) > 1:
                 fields_list_queue = deque(fields_list)
                 selected_field = None
@@ -493,7 +468,7 @@ def organize_vault_structure(root_dir):
         except:
             # print(f'source section — error with topic {note_name}')
             continue
-    
+                
     for note_name in memo_file_types['producer']:
     
         try:
@@ -512,7 +487,7 @@ def organize_vault_structure(root_dir):
                 memo_file_paths[note_name] = destination_path
 
         except:
-            # # print(f'producer section — error with producer {note_name}')
+            # print(f'producer section — error with producer {note_name}')
             continue
                 
     return True
@@ -533,8 +508,9 @@ def delete_circular_topics_call(memo_file_paths, memo_file_meta_data):
         delete_circular_topics(v, memo_file_meta_data)
 
 def delete_empty_folders(memo_folder_paths):
-    '''helper function that traverses the vault and deletes empty folders'''
-
+    '''
+    Helper function that traverses the vault and deletes empty folders
+    '''
     for root, dirs, files in os.walk(vault_path, topdown=False):
         for name in dirs:
             dir_path = os.path.join(root, name)
@@ -551,3 +527,4 @@ update_producers(memo_file_paths, memo_file_meta_data)
 delete_circular_topics_call(memo_file_paths, memo_file_meta_data)
 update_memo_variables(vault_path)
 organize_vault_structure(vault_path)
+

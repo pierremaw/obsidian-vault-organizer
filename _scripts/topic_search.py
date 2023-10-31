@@ -61,7 +61,7 @@ def topic_search(file_path: str, memo_file_paths: dict, memo_file_meta_data: dic
     new_file_string = re.sub(r"(?<=Topics:).*", new_topic_string, file_string)
 
     # write to the file
-    with open(file_path, "w") as f:
+    with open(file_path, "w", encoding='utf-8') as f:
         f.write(new_file_string)
     
     return unique_topics

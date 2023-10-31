@@ -2,6 +2,7 @@ import os
 import os.path
 from meta_data_search import _meta_data_search
 from config import vault_path, template_folder_name
+template_dir = template_folder_name.rstrip('/')
 
 def add_note(queue, note, type_):
     """
@@ -31,17 +32,17 @@ def create_files_dict(directory: str) -> dict:
     - dict: A dictionary where the keys are file names and the values are file paths.
     """
     memo_file_paths, memo_file_meta_data, memo_file_types, memo_folder_paths = {}, {}, {}, {}
-    print(f"Template folder name from config: {template_folder_name}")
+    print(f"Template folder name from config: {template_dir}")
 
     for dirpath, dirnames, filenames in os.walk(directory):
         # Check if the current directory is the template directory
-        if template_folder_name in os.path.relpath(dirpath, directory).split(os.path.sep):
+        if template_dir in os.path.relpath(dirpath, directory).split(os.path.sep):
             print(f"Skipping directory: {dirpath}")
             continue
 
         for filename in filenames:
             file_path = os.path.join(dirpath, filename)
-            if file_path.endswith(".md") and not os.path.join(directory, template_folder_name) in file_path:
+            if file_path.endswith(".md") and not os.path.join(directory, template_dir) in file_path:
                 file_name_clean, postfix = os.path.splitext(filename)
                 memo_file_paths[file_name_clean] = file_path
                 note_meta_data = _meta_data_search(file_path, {})

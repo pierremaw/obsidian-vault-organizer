@@ -13,7 +13,7 @@ The Vault Organizer is a Python utility script aimed at organizing, updating, an
 
 ## Installation
 1. Clone this repository.
-2. Navigate to the directory containing `vault_organizer.py`.
+2. Navigate to the root directory.
 3. Install required libraries:
    ```bash
    pip install -r requirements.txt

@@ -13,7 +13,7 @@ The Vault Organizer is a Python utility script aimed at organizing, updating, an
 
 ## Installation
 1. Clone this repository.
-2. Navigate to the directory containing `vault_organizer.py`.
+2. Navigate to the root directory.
 3. Install required libraries:
    ```bash
    pip install -r requirements.txt
@@ -25,6 +25,10 @@ Before running the script, ensure you've configured your vault settings in the `
 - `field_folder`: The name of the folder containing field notes.
 - `topic_folder`: The name of the folder containing topic notes.
 - `template_folder`: The name of the folder containing templates.
+<<<<<<< HEAD
+=======
+- `key_insights_folder`: The name of the folder container key insights.
+>>>>>>> 1f4804a1ee345798a91deaafbd202676ef4986e6
 
 ## Key Components & Their Functions
 
@@ -35,7 +39,7 @@ Before running the script, ensure you've configured your vault settings in the `
 
 - **update_memo_variables(vault_path)**: Update global dictionaries with memo file paths, metadata, types, and folder paths.
 
-- **organize_vault_structure(root_dir)**: Organize the vault structure by moving files to their respective folders based on their type and metadata.
+- **vault_organizer(root_dir)**: Organize the vault structure by moving files to their respective folders based on their type and metadata.
 
 - **update_topics(memo_file_paths, memo_file_meta_data)**: Iterates over memo files and updates their topics using the `topic_search` function.
 
@@ -45,16 +49,16 @@ Before running the script, ensure you've configured your vault settings in the `
 
 ## Usage
 
-Simply run the script using Python:
+Make sure you are in the root directory that contains the `_scripts` folder. Then, run the script using Python:
 
 ```bash
-python vault_organizer.py
+python _scripts/vault_organizer.py
 ```
 
 ## Notes
 
 - Make sure to backup your vault before running the script to avoid any unintentional data loss.
-- If any error occurs during the file movement process within the `organize_vault_structure` function, the script continues to process the next file.
+- If any error occurs during the file movement process within the `vault_organizer` function, the script continues to process the next file.
 - Some important functionalities like `create_files_dict`, `topic_search`, and `delete_circular_topics` are imported from other modules, ensure they're present in the same directory.
 
 ## Contributing

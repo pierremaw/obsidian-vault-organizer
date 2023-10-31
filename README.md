@@ -60,5 +60,3 @@ python _scripts/vault_organizer.py
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
-
----

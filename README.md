@@ -1,26 +1,44 @@
-# Obsidian-Vault-Organizer
-
-Organize Vault Structure Module
+# Organize Vault Structure Module
 
 This Python module is designed to organize and manage the structure of a vault, which is a collection of memo files. The module provides several functions to manipulate and organize these files based on their metadata and types.
-Functions
-update_memo_variables(vault_path)
 
-This function updates global dictionaries with memo file paths, metadata, types, and folder paths. It takes the path to the vault directory as an argument.
-organize_vault_structure(root_dir)
+## Functions
 
-This function organizes the vault structure by moving files to their respective folders based on their type and metadata. It takes the root directory of the vault as an argument.
-update_topics(memo_file_paths, memo_file_meta_data)
+### `update_memo_variables(vault_path)`
+Updates global dictionaries with memo file paths, metadata, types, and folder paths. 
+- **Arguments**: 
+  - `vault_path`: Path to the vault directory.
 
-This function updates topics for the provided memo files. It iterates over the provided memo files and updates their topics by calling the topic_search function. It takes a dictionary containing the paths of the memo files and a dictionary containing metadata for the memo files as arguments.
-delete_circular_topics_call(memo_file_paths, memo_file_meta_data)
+### `organize_vault_structure(root_dir)`
+Organizes the vault structure by moving files to their respective folders based on their type and metadata. 
+- **Arguments**: 
+  - `root_dir`: Root directory of the vault.
 
-This function removes circular topics from the provided memo files. It iterates over the provided memo files and deletes circular topics by calling the delete_circular_topics function. It takes a dictionary containing the paths of the memo files and a dictionary containing metadata for the memo files as arguments.
-delete_empty_folders(memo_folder_paths)
+### `update_topics(memo_file_paths, memo_file_meta_data)`
+Updates topics for the provided memo files. It iterates over the provided memo files and updates their topics by calling the `topic_search` function. 
+- **Arguments**: 
+  - `memo_file_paths`: Dictionary containing the paths of the memo files.
+  - `memo_file_meta_data`: Dictionary containing metadata for the memo files.
 
-This function deletes empty folders from the vault, excluding specified protected folders. It traverses the vault and deletes folders if they are empty, with the exception of paths provided in CORE_FOLDERS. It takes a list containing the paths of the folders to check as an argument.
-Usage
+### `delete_circular_topics_call(memo_file_paths, memo_file_meta_data)`
+Removes circular topics from the provided memo files. It iterates over the provided memo files and deletes circular topics by calling the `delete_circular_topics` function. 
+- **Arguments**: 
+  - `memo_file_paths`: Dictionary containing the paths of the memo files.
+  - `memo_file_meta_data`: Dictionary containing metadata for the memo files.
+
+### `delete_empty_folders(memo_folder_paths)`
+Deletes empty folders from the vault, excluding specified protected folders. It traverses the vault and deletes folders if they are empty, with the exception of paths provided in `CORE_FOLDERS`. 
+- **Arguments**: 
+  - `memo_folder_paths`: List containing the paths of the folders to check.
+
+## Usage
 
 The main functions are called at the end of the module:
 
-These functions are designed to be used together to manage and organize the vault structure. They should be called in the order shown above to ensure the vault is properly organized and updated.
+```python
+# Example code calling the functions
+update_memo_variables('/path/to/vault')
+organize_vault_structure('/path/to/vault/root')
+update_topics(memo_paths_dict, memo_metadata_dict)
+delete_circular_topics_call(memo_paths_dict, memo_metadata_dict)
+delete_empty_folders(memo_folder_list)

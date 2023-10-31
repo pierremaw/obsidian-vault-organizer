@@ -54,7 +54,7 @@ python vault_organizer.py
 ## Notes
 
 - Make sure to backup your vault before running the script to avoid any unintentional data loss.
-- If any error occurs during the file movement process within the `organize_vault_structure` function, the script continues to process the next file.
+- If any error occurs during the file movement process within the `vault_organizer` function, the script continues to process the next file.
 - Some important functionalities like `create_files_dict`, `topic_search`, and `delete_circular_topics` are imported from other modules, ensure they're present in the same directory.
 
 ## Contributing

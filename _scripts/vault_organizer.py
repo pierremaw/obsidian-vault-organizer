@@ -36,7 +36,7 @@ def update_memo_variables(vault_path):
     global memo_file_paths, memo_file_meta_data, memo_file_types, memo_folder_paths
     memo_file_paths, memo_file_meta_data, memo_file_types, memo_folder_paths = create_files_dict(vault_path)
 
-def organize_vault_structure(root_dir):
+def vault_organizer(root_dir):
     """
     Organize the vault structure by moving files to their respective folders based on their type and metadata.
 
@@ -157,4 +157,4 @@ delete_empty_folders(memo_folder_paths)
 update_topics(memo_file_paths, memo_file_meta_data)
 delete_circular_topics_call(memo_file_paths, memo_file_meta_data)
 update_memo_variables(vault_path)
-organize_vault_structure(vault_path)
+vault_organizer(vault_path)

@@ -25,10 +25,7 @@ Before running the script, ensure you've configured your vault settings in the `
 - `field_folder`: The name of the folder containing field notes.
 - `topic_folder`: The name of the folder containing topic notes.
 - `template_folder`: The name of the folder containing templates.
-<<<<<<< HEAD
-=======
 - `key_insights_folder`: The name of the folder container key insights.
->>>>>>> 1f4804a1ee345798a91deaafbd202676ef4986e6
 
 ## Key Components & Their Functions
 

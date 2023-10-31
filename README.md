@@ -58,12 +58,7 @@ python _scripts/vault_organizer.py
 - If any error occurs during the file movement process within the `vault_organizer` function, the script continues to process the next file.
 - Some important functionalities like `create_files_dict`, `topic_search`, and `delete_circular_topics` are imported from other modules, ensure they're present in the same directory.
 
-## Contributing
-Feel free to fork this repository, make changes, and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
-
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ---
-
-Feedback, issue reports, and pull requests are welcome. Happy organizing!

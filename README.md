@@ -22,11 +22,11 @@ The Vault Organizer is a Python utility script aimed at organizing, updating, an
    3. Optional hotkey setup: Access `Settings`, click on the `Hotkeys` option, then update the `Templates: Insert template` hotkey to `CTRL` + `ALT` + `T` (or any appropriate hotkey combination). 
 6. Ensure you have Python 3.x
 7. Install these required Python Libraries: `os`, `shutil`, `rapidfuzz`, `collections`
-   ```bash
+   ```shell
    pip install -r requirements.txt
    ```
 8. The helper script can be run from your Obsidian Vault:
-   ```bash
+   ```shell
    cd ObsidianVault && python _scripts/vault_organizer.py
    ``` 
 

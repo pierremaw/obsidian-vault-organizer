@@ -41,7 +41,7 @@ Before running the script, ensure you've configured your vault settings in the `
 - `template_folder`: The name of the folder containing templates.
 - `key_insights_folder`: The name of the folder container key insights.
 
-## Key Components & Their Functions
+## Key Component Functions
 
 1. **CORE_FOLDERS**: A list containing folder paths that are protected from deletion.
 2. **memo dictionaries**: These global dictionaries store memo file paths, metadata, types, and folder paths.

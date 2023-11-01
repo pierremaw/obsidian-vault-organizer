@@ -30,7 +30,7 @@ The script:
    3. Navigating to the appropriate folder.
    4. Then clicking the `Select Folder` option.
 9. Ensure you have Python 3.x.
-10. Install thise required Python Library:`rapidfuzz`.
+10. Install the Python Library called `rapidfuzz`.
    ```bash
    pip install rapidfuzz
 

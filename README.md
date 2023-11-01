@@ -16,7 +16,7 @@ The script:
 
 ## Setup instructions
 1. Install Obsidian.
-2. Create an Obsidian Vault (a folder to store all your Obsidian notes). Mine is named ObsidianVault and I put it in my home folder.
+2. Create an Obsidian Vault (a folder to store all your Obsidian notes). I've named mine `ObsidianVault` and put it in my home folder.
 3. Clone this repository into your Obsidian Vault.
 4. In Obsidian, access `Settings`, click the `Files & Links` option, then change the default location for new attachments to `_attachments` (create this folder if it doesn't exist).
 5. Set up templates:

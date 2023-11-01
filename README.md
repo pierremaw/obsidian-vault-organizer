@@ -45,10 +45,10 @@ The script:
 
 ## Configuration
 Before running the script, ensure you've configured your vault settings in the `config.py` file:
-- `vault_path`: The path to the root directory of your vault.
+- `vault_path`: The path to the root folder of your vault.
+- `template_folder`: The name of the folder containing templates.
 - `field_folder`: The name of the folder containing field notes.
 - `topic_folder`: The name of the folder containing topic notes.
-- `template_folder`: The name of the folder containing templates.
 - `key_insights_folder`: The name of the folder container key insights.
 
 ## Key Component Functions

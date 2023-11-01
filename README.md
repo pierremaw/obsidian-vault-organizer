@@ -24,7 +24,7 @@ The automation bot:
    2. Access `Settings`, click on `Templates`, then within that section update the `Template folder location` to `_templates`.
    3. Optional hotkey setup: Access `Settings`, click on the `Hotkeys` option, then update the hotkey for `Templates: Insert template` to `CTRL` + `ALT` + `T` (or any appropriate hotkey combination). 
 6. Access Visual Studio Code (or any IDE).
-7. Ensure you are in the root folder for your Obsidian Vault. Within Visual Studio Code, you can open your root folder by:
+7. Ensure you are in the root folder for your Obsidian Vault. Within Visual Studio Code, you can open your root folder with these steps:
    1. Clicking `File`.
    2. Clicking the `Open Folder` option.
    3. Navigating to the appropriate folder.

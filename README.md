@@ -3,7 +3,7 @@
 https://github.com/pierremaw/Obsidian-Vault-Organizer/assets/99075249/46bac793-d696-49f3-b0d8-d096e24f1238
 
 ## Introduction
-Welcome to the Vault Organizer! I created this script because I was fascinated by recursion and dynamic programming, and I wanted to visualize them in action.
+Welcome to the Vault Organizer! I created this script as I was fascinated by recursion and dynamic programming, and I wanted to visualize them in action.
 
 The Vault Organizer is a Python utility script that can organize, update, and maintain an Obsidian Vault. 
 

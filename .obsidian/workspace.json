@@ -127,9 +127,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Machine Learning.md"
-              }
+              "state": {}
             }
           },
           {
@@ -173,6 +171,9 @@
   "lastOpenFiles": [
     "1 Fields/AI/Machine Learning/Machine Learning.md",
     "Machine Learning.md",
+    "Machine Learning.md",
+    "Machine Learning.md",
+    "Machine Learning.md",
     "1 Fields/AI/Neural Networks/Neural Networks.md",
     "1 Fields/Design/Design.md",
     "Design.md",
@@ -203,10 +204,7 @@
     "2 Topics/Machine Learning/Supervised Learning",
     "Robotics.md",
     "2 Topics/Robotics",
-    "1 Fields/AI/Robotics/Robotics.md",
     "1 Fields/AI/Robotics",
-    "Machine learning note.md",
-    "_templates/Sub Topic.md",
     "7 Canvas/JavaScript MindMap.canvas",
     "7 Canvas/Vyper MindMap.canvas",
     "7 Canvas/XPath & Selenium.canvas",

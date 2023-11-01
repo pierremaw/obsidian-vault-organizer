@@ -12,7 +12,7 @@ The script:
 1. Traverses a configurable set of folders within an Obsidian Vault.
 2. Scans the folders for notes that have the `.md` postfix.  
 3. Categorizes notes based on tag metadata.
-4. Then organizes notes in the file system hierarchy to ensures that they in the proper position based on their tag and their ancestor.
+4. Then organizes notes in the file system hierarchy to ensure that they in the proper position based on their tag and their ancestor.
 
 ## Setup instructions
 1. Ensure you have Obsidian installed. The latest version is available at https://obsidian.md/.

@@ -24,7 +24,7 @@ The script:
    2. Access `Settings`, click on `Templates`, then within that section update the `Template folder location` to `_templates`.
    3. Optional hotkey setup: Access `Settings`, click on the `Hotkeys` option, then update the hotkey for `Templates: Insert template` to `CTRL` + `ALT` + `T` (or any appropriate hotkey combination). 
 6. Access Visual Studio Code (or any IDE).
-7. Ensure you are in the root folder for your Obsidian Vault. Within Visual Studio Code, you can open your root folder by clicking `File`, then clicking the `Open Folder` option.
+7. Ensure you are in the root folder for your Obsidian Vault. Within Visual Studio Code, you can open your root folder by clicking `File`, clicking the `Open Folder` option, navigating to the appropriate folder, then clicking the `Select Folder` option.
 8. Ensure you have Python 3.x.
 9. Install these required Python Libraries: `os`, `shutil`, `rapidfuzz`, `collections`.
    ```bash

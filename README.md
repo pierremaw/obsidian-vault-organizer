@@ -49,8 +49,9 @@ The automation bot:
    python _scripts/vault_organizer.py
    ``` 
 
-## Key Component Functions
+## Key Components & Functions
 
+### Components
 1. **CORE_FOLDERS**: A list containing folder paths that are protected from deletion.
 2. **memo dictionaries**: These global dictionaries store memo file paths, metadata, types, and folder paths.
 

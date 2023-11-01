@@ -52,9 +52,9 @@ Before running the script, ensure you've configured your vault settings in the `
 
 - **vault_organizer(root_dir)**: Organize the vault structure by moving files to their respective folders based on their type and metadata.
 
-- **update_topics(memo_file_paths, memo_file_meta_data)**: Iterates over memo files and updates their topics using the `topic_search` function.
+- **update_topics(memo_file_paths, memo_file_meta_data)**: Traverses over memo files and updates their topics using the `topic_search` function.
 
-- **delete_circular_topics_call(memo_file_paths, memo_file_meta_data)**: Iterates over memo files and deletes circular topics using the `delete_circular_topics` function.
+- **delete_circular_topics_call(memo_file_paths, memo_file_meta_data)**: Traverses over memo files and deletes circular topics using the `delete_circular_topics` function.
 
 - **delete_empty_folders(memo_folder_paths)**: Traverses the vault and deletes folders if they are empty, with the exception of paths provided in CORE_FOLDERS.
 

@@ -55,7 +55,7 @@ The automation bot:
 1. **CORE_FOLDERS**: A list containing folder paths that are protected from deletion.
 2. **memo dictionaries**: These global dictionaries store memo file paths, metadata, types, and folder paths.
 
-### Functions:
+### Functions
 
 - **update_memo_variables(vault_path)**: Update global dictionaries with memo file paths, metadata, types, and folder paths.
 

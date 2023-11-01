@@ -77,4 +77,4 @@ python _scripts/vault_organizer.py
 
 ## Tip
 
-- Make sure to backup your vault before running the script.
+- Make sure to backup your vault before running the automation bot.

@@ -5,10 +5,10 @@ https://github.com/pierremaw/Obsidian-Vault-Organizer/assets/99075249/46bac793-d
 ## Introduction
 Welcome to the Vault Organizer! I created this script as I was fascinated by recursion and dynamic programming, and I wanted to visualize them in action.
 
-The Vault Organizer is a Python utility script that can organize, update, and maintain an Obsidian Vault. 
+The Vault Organizer is a Python automation bot that can organize, update, and maintain an Obsidian Vault. 
 
-## What does the script do?
-The script:
+## What does the automation bot do?
+The automation bot:
 1. Traverses a configurable set of folders within an Obsidian Vault.
 2. Scans the folders for notes that have the `.md` postfix.  
 3. Categorizes notes based on tag metadata.
@@ -38,18 +38,16 @@ The script:
 
    pip install -r requirements.txt
    ```
-11. The helper script can then run from your Obsidian Vault:
+11. Configure folder paths in `config.py`
+   1. `vault_path`: The path to the root folder of your vault. The preconfigured setting is `./`.
+   2. `template_folder`: The name of the folder containing templates. The preconfigured setting is `_templates/`.
+   3. `field_folder`: The name of the folder containing field notes. The field tag specifies a broad umbrella topic that encompass many topics. The preconfigured setting is `1 Fields/`.
+   4. `topic_folder`: The name of the folder containing topic notes. The topic tag specifies a standard topic. The preconfigured setting is `2 Topics/`.
+   5. `key_insights_folder`: The name of the folder containing key insights. The preconfigured setting is `3 Key Insights/`.
+12. Then once you are happy with your configuration, the helper script can then run from your Obsidian Vault:
    ```bash
    python _scripts/vault_organizer.py
    ``` 
-
-## Configuration
-Before running the script, ensure you've configured your vault settings in the `config.py` file:
-- `vault_path`: The path to the root folder of your vault.
-- `template_folder`: The name of the folder containing templates.
-- `field_folder`: The name of the folder containing field notes.
-- `topic_folder`: The name of the folder containing topic notes.
-- `key_insights_folder`: The name of the folder container key insights.
 
 ## Key Component Functions
 

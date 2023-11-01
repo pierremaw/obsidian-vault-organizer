@@ -30,8 +30,12 @@ The script:
    3. Navigating to the appropriate folder.
    4. Then clicking the `Select Folder` option.
 9. Ensure you have Python 3.x.
-10. Install these required Python Libraries: `os`, `shutil`, `rapidfuzz`, `collections`.
+10. Install thise required Python Library:`rapidfuzz`.
    ```bash
+   pip install rapidfuzz
+
+   or
+
    pip install -r requirements.txt
    ```
 11. The helper script can then run from your Obsidian Vault:

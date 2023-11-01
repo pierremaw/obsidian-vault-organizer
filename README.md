@@ -15,7 +15,7 @@ The Vault Organizer is a Python utility script aimed at organizing, updating, an
 1. Install Obsidian.
 2. Create an Obsidian Vault (a folder to store all your Obsidian notes). Mine is named ObsidianVault and I put it in my home folder.
 3. Clone this repository into your Obsidian Vault.
-4. In Obsidian, access `Settings`, click the `Files & Links` option, then change the default location for new attachments to `_attachments`
+4. In Obsidian, access `Settings`, click the `Files & Links` option, then change the default location for new attachments to `_attachments` (create this folder if it doesn't exist).
 5. Set up templates:
    1. Access `Settings`, click the `Core plugins` option, then within that section search for the `Templates` option and switch it on.
    2. Access `Settings`, click on `Templates`, then within that section update the `Template folder location` to `_templates`

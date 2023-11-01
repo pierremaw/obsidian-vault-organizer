@@ -15,22 +15,24 @@ The script:
 4. Then organizes notes in the file system hierarchy to ensures that they in the proper position based on their tag and their ancestor.
 
 ## Setup instructions
-1. Install Obsidian.
+1. Ensure you have Obsidian installed. The latest version is available at https://obsidian.md/.
 2. Create an Obsidian Vault (a folder to store all your Obsidian notes). I've named mine `ObsidianVault` and put it in my home folder.
-3. Clone this repository into your Obsidian Vault.
+3. Clone this GitHub repository into your Obsidian Vault.
 4. In Obsidian, access `Settings`, click the `Files & Links` option, then change the default location for new attachments to `_attachments` (create this folder if it doesn't exist).
 5. Set up templates:
    1. Access `Settings`, click the `Core plugins` option, then within that section search for the `Templates` option and switch it on.
    2. Access `Settings`, click on `Templates`, then within that section update the `Template folder location` to `_templates`
    3. Optional hotkey setup: Access `Settings`, click on the `Hotkeys` option, then update the `Templates: Insert template` hotkey to `CTRL` + `ALT` + `T` (or any appropriate hotkey combination). 
-6. Ensure you have Python 3.x
-7. Install these required Python Libraries: `os`, `shutil`, `rapidfuzz`, `collections`
+6. Access Visual Studio Code (or any IDE).
+7. Ensure you are in the root folder for your Obsidian Vault. You can open your root folder by clicking `File`, then clicking the `Open Folder` option.
+8. Ensure you have Python 3.x.
+9. Install these required Python Libraries: `os`, `shutil`, `rapidfuzz`, `collections`.
    ```bash
    pip install -r requirements.txt
    ```
-8. The helper script can then run from your Obsidian Vault:
+10. The helper script can then run from your Obsidian Vault:
    ```bash
-   cd ObsidianVault && python _scripts/vault_organizer.py
+   python _scripts/vault_organizer.py
    ``` 
 
 ## Configuration

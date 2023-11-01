@@ -68,8 +68,8 @@ The automation bot:
 - **delete_empty_folders(memo_folder_paths)**: Traverses the vault and deletes folders if they are empty, with the exception of paths provided in CORE_FOLDERS.
 
 ## Tips
+- Make sure to backup your vault before running the automation bot.
 - Make sure you are in the root directory that contains the `_scripts` folder. Then, run the script using Python:
 ```bash
 python _scripts/vault_organizer.py
 ```
-- Make sure to backup your vault before running the automation bot.

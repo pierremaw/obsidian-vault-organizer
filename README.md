@@ -12,19 +12,18 @@ The Vault Organizer is a Python utility script aimed at organizing, updating, an
 - Deleting empty folders while ensuring core folders remain protected.
 
 ## Setup instructions
-1. Ensure you have Python 3.x
-2. Install these required Python Libraries: `os`, `shutil`, `rapidfuzz`, `collections`
+1. Install Obsidian and create an Obsidian Vault (a folder to store all your notes). Mine is named ObsidianVault and I put it in my home folder.
+2. Clone this repository into your vault.
+3. In Obsidian, access `Settings`, click the `Files & Links` option, then change the default location for new attachments to `_attachments`
+4. Set up templates:
+   1. Access `Settings`, click the `Core plugins` option, then within that section search for the `Templates` option and switch it on.
+   2. Access `Settings`, click on `Templates`, then within that section update the `Template folder location` to `_templates`
+   3. Optional hotkey setup: Access `Settings`, click on the `Hotkeys` option, then update the `Templates: Insert template` hotkey to `CTRL` + `ALT` + `T` (or any appropriate hotkey combination). 
+5. Ensure you have Python 3.x
+6. Install these required Python Libraries: `os`, `shutil`, `rapidfuzz`, `collections`
    ```bash
    pip install -r requirements.txt
    ```
-4. Install Obsidian and create an Obsidian Vault (a folder to store all your notes). Mine is named ObsidianVault and I put it in my home folder.
-5. Clone this repository into your vault.
-6. In Obsidian, access `Settings`, click the `Files & Links` option, then change the default location for new attachments to `_attachments`
-7. Set up templates:
-     i. Access `Settings`, click the `Core plugins` option, then within that section search for the `Templates` option and switch it on.
-    ii. Access `Settings`, click on `Templates`, then within that section update the `Template folder location` to `_templates`
-   iii. Optional hotkey setup: Access `Settings`, click on the `Hotkeys` option, then update the `Templates: Insert template` hotkey to `CTRL` + `ALT` + `T` (or any appropriate hotkey combination). 
-
 
 ## Configuration
 Before running the script, ensure you've configured your vault settings in the `config.py` file:

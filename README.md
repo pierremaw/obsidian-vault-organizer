@@ -38,7 +38,7 @@ The automation bot:
 
    pip install -r requirements.txt
    ```
-11. Configure folder paths in `config.py`
+11. Configure folder paths in `config.py`:
 - `vault_path`: The path to the root folder of your vault. The preconfigured setting is `./`.
 - `template_folder`: The name of the folder containing templates. The preconfigured setting is `_templates/`.
 - `field_folder`: The name of the folder containing field notes. The field tag specifies a broad umbrella topic that encompass many topics. The preconfigured setting is `1 Fields/`.

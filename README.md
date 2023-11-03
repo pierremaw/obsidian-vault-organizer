@@ -69,11 +69,7 @@ The automation bot:
 
 ## Tips
 - Make sure to backup the vault before running the automation bot.
-- Make sure you are in the root directory that contains the `_scripts` folder. Then, run the script using Python:
-```bash
-python _scripts/vault_organizer.py
-```
-- To assign a system wide hotkey to activate the bot, in my ~/.zshrc I created an alias for this, such that when I type obsidian into the shell my script runs.
+- I updated my ~/.zshrc to create a global hot key for the automation bot, such that when I type obsidian into the shell my script runs.
 ```bash
 alias obsidian="cd $HOME/ObsidianVault && python _scripts/obsidian_util.py"
 ```

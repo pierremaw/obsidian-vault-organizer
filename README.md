@@ -69,7 +69,7 @@ The automation bot:
 
 ## Tips
 - Make sure to backup the vault before running the automation bot.
-- I updated my ~/.zshrc to create a global hot key for the automation bot, such that when I type obsidian into the shell my script runs.
+- To create a global hotkey, I updated my ~/.zshrc file, such that when I type obsidian into the shell my script runs.
 ```bash
 alias obsidian="cd $HOME/ObsidianVault && python _scripts/vault_organizer.py"
 ```

@@ -1,6 +1,6 @@
 # Obsidian Vault Organizer · Dynamic‑Programming‑Driven File Organization in Python
 
-[**Watch the demo ▶︎**](https://github.com/pierremaw/Obsidian-Vault-Organizer/assets/99075249/46bac793-d696-49f3-b0d8-d096e24f1238)
+https://github.com/user-attachments/assets/840e9d63-2572-48f4-958c-0f43ffa524d6
 
 **Obsidian Vault Organizer** is a Python automation script that transforms an Obsidian vault into a self‑maintaining knowledge graph.  It explores
 recursion, file‑system manipulation, **and a memoised dynamic‑programming (DP) approach** to decide—once and only once—where every note *optimally* belongs.

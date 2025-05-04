@@ -1,11 +1,11 @@
 # Obsidian Vault Organizer · Dynamic‑Programming‑Driven File Organization in Python
 
-https://github.com/user-attachments/assets/840e9d63-2572-48f4-958c-0f43ffa524d6
+[https://github.com/user-attachments/assets/840e9d63-2572-48f4-958c-0f43ffa524d6](https://github.com/user-attachments/assets/840e9d63-2572-48f4-958c-0f43ffa524d6)
 
-**Obsidian Vault Organizer** is a Python automation script that transforms an Obsidian vault into a self‑maintaining knowledge graph.  It explores
-recursion, file‑system exploration, **and a memoised dynamic‑programming (DP) approach** to organize a vault based on it's tagged type and topic.
+**Obsidian Vault Organizer** is a Python automation script that transforms an Obsidian vault into a self‑maintaining knowledge graph.  It explores
+recursion, file‑system exploration, **and a memoised dynamic‑programming (DP) approach** to organize a vault based on its tagged type and topic.
 
-Under the hood, each note becomes a *state* keyed by its metadata.  The script builds a DP table that maps that state to a folder path, caching the result so repeated look‑ups run in **O(1)** instead of repeatedly traversing the vault.  The payoff: a clean structure even for thousands of notes.
+Under the hood, each note becomes a *state* keyed by its metadata.  The script builds a DP table that maps that state to a folder path, caching the result so repeated look‑ups run in **O(1)** instead of repeatedly traversing the vault.  The payoff: a clean structure even for thousands of notes.
 
 This project showcases my interest in algorithmic organisation—how DP, recursion, and metadata parsing can augment everyday tools like Obsidian.
 
@@ -40,7 +40,7 @@ The end result is a vault where *each note lives exactly where its metadata says
    * **Template folder** → `_templates/`
    * (Optional) set a hotkey for “Insert template”.
 
-5. **Open the vault** in VS Code (or your favourite IDE).
+5. **Open the vault** in VS Code (or your favourite IDE).
 
 6. **Ensure** your terminal’s working directory is the vault root.
 
@@ -52,14 +52,12 @@ The end result is a vault where *each note lives exactly where its metadata says
    pip install -r requirements.txt
    ```
 
-8. **Configure paths** in `config.py` (if you deviate from the defaults):
+8. **Configure paths** in `config.py` (if you deviate from the defaults):
 
    ```python
-   vault_path           = "./"             # root of your vault
-   template_folder      = "_templates/"    # where templates live
-   field_folder         = "1 Fields/"      # high‑level categories
-   topic_folder         = "2 Topics/"      # topic subfolders
-   key_insights_folder  = "3 Key Insights/"  # special insights
+   vault_path      = "./"          # root of your vault
+   template_folder = "_templates/" # where templates live
+   field_folder    = "1 Fields/"   # high‑level categories
    ```
 
 9. **Run the organiser** from the vault root:
@@ -76,8 +74,6 @@ The end result is a vault where *each note lives exactly where its metadata says
 
 * `_templates/`
 * `1 Fields/`
-* `2 Topics/`
-* `3 Key Insights/`
 
 ### Key Data Structures
 
@@ -108,4 +104,3 @@ The end result is a vault where *each note lives exactly where its metadata says
   ```bash
   alias obsidian-clean="cd $HOME/ObsidianVault && python _scripts/vault_organizer.py"
   ```
-

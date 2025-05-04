@@ -1,109 +1,131 @@
-# Obsidian Vault Organizer: Dynamic Programming File Structuring with Python Automation
+# Obsidian Vault Organizer · Dynamic‑Programming‑Driven File Structuring in Python
 
-[Watch a demo of the automation in action.](https://github.com/pierremaw/Obsidian-Vault-Organizer/assets/99075249/46bac793-d696-49f3-b0d8-d096e24f1238)
+[**Watch the demo ▶︎**](https://github.com/pierremaw/Obsidian-Vault-Organizer/assets/99075249/46bac793-d696-49f3-b0d8-d096e24f1238)
 
-Obsidian Vault Organizer is a Python automation script I created to explore recursion, file system manipulation, and dynamic programming concepts within a real-world note-taking workflow. It parses, categorizes, and restructures a personal Obsidian Vault by analyzing metadata tags in `.md` files. The automation dynamically organizes notes into structured folders based on their semantic relationships and tag hierarchy—turning a flat note space into a clean, maintainable knowledge graph.
+**Obsidian Vault Organizer** is a Python automation script that turns a flat Obsidian vault into a self‑maintaining knowledge graph.  It explores
+recursion, file‑system manipulation, **and a memoised dynamic‑programming (DP) approach** to decide—once and only once—where every note *optimally* belongs.
 
-This project reflects my interest in recursive systems, metadata processing, and how file automation can augment tools like Obsidian to support more meaningful long-term organization.
+Under the hood, each note becomes a *state* keyed by its metadata.  The script builds a DP table that maps that state to a folder path, caching the result so repeated look‑ups run in **O(1)** instead of repeatedly traversing the vault.  The payoff: a clean structure even for thousands of notes.
+
+This project showcases my interest in algorithmic organisation—how DP, recursion, and metadata parsing can augment everyday tools like Obsidian.
+
+---
 
 ## What the Script Does
 
-Once executed, the script:
+When you run the script it:
 
-- Recursively traverses your configured vault folder to find Markdown notes.
-- Extracts metadata from each note, including tags such as `field`, `topic`, and `insight`.
-- Uses that metadata to move and restructure files into folders based on their type and relational context.
-- Cleans up the workspace by removing empty folders and eliminating circular topic references.
-- Updates memo-topic relationships using a fuzzy string matching algorithm for semantic accuracy.
+* **Recursively traverses** your vault to discover every Markdown note.
+* **Parses metadata**—tags such as `field`, `topic`, and `insight`—for each note.
+* **Computes the optimal location** for every note via a DP lookup, then moves the file accordingly.
+* **Eliminates clutter** by deleting empty folders and resolving circular topic references.
+* **Refines relationships** with fuzzy‑string matching to keep topics semantically accurate.
 
-The result is a neatly organized vault, where each note exists exactly where it should, guided by its metadata and relational structure.
+The end result is a vault where *each note lives exactly where its metadata says it should*.
+
+---
 
 ## Setup Instructions
 
-1. Install Obsidian from [obsidian.md](https://obsidian.md/).
-2. Create or open your vault (e.g., `~/ObsidianVault`).
-3. Clone this repository into the vault directory.
-4. Configure Obsidian settings:
-   - Set the default location for attachments to `_attachments/`.
-   - Enable the `Templates` core plugin.
-   - Set your template folder location to `_templates/`.
-   - Optionally configure a hotkey for inserting templates.
-5. Open the vault in VS Code or your IDE of choice.
-6. Ensure you're in the root directory of your Obsidian Vault.
-7. Install Python 3.x and the `rapidfuzz` dependency:
+1. **Install Obsidian** from [obsidian.md](https://obsidian.md/).
+
+2. **Create or open a vault** (e.g. `~/ObsidianVault`).
+
+3. **Clone this repository** *inside* that vault.
+
+4. **Configure Obsidian**:
+
+   * **Attachments** → `_attachments/`
+   * **Templates** core plugin → enabled
+   * **Template folder** → `_templates/`
+   * (Optional) set a hotkey for “Insert template”.
+
+5. **Open the vault** in VS Code (or your favourite IDE).
+
+6. **Ensure** your terminal’s working directory is the vault root.
+
+7. **Install Python 3** and the only dependency:
+
    ```bash
    pip install rapidfuzz
-   # or
+   # or, with the lockfile
    pip install -r requirements.txt
-````
+   ```
 
-8. Configure folder paths in `config.py`:
+8. **Configure paths** in `config.py` (if you deviate from the defaults):
 
-   * `vault_path`: The root path to your vault (`./` by default).
-   * `template_folder`: Where templates are stored (e.g., `_templates/`).
-   * `field_folder`: High-level category folders (e.g., `1 Fields/`).
-   * `topic_folder`: Topical subfolders (e.g., `2 Topics/`).
-   * `key_insights_folder`: Special insights (e.g., `3 Key Insights/`).
+   ```python
+   vault_path           = "./"             # root of your vault
+   template_folder      = "_templates/"    # where templates live
+   field_folder         = "1 Fields/"      # high‑level categories
+   topic_folder         = "2 Topics/"      # topic subfolders
+   key_insights_folder  = "3 Key Insights/"  # special insights
+   ```
 
-9. Run the organizer script from the vault root:
+9. **Run the organiser** from the vault root:
 
    ```bash
    python _scripts/vault_organizer.py
    ```
 
+\---|:---|:---|
+\| `vault_path` | Root of your vault | `./` |
+\| `template_folder` | Template storage | `_templates/` |
+\| `field_folder` | High‑level categories | `1 Fields/` |
+\| `topic_folder` | Topic subfolders | `2 Topics/` |
+\| `key_insights_folder` | Special insights | `3 Key Insights/` |
+
+9. Run the organiser:
+
+   ```bash
+   python _scripts/vault_organizer.py
+   ```
+
+---
+
 ## Architecture and Core Functions
 
-### Core Folders
-
-The following folders are protected from cleanup and are central to the file system structure:
+### Core Folders (never deleted)
 
 * `_templates/`
-* `1 Fields/`
-* `2 Topics/`
-* `3 Key Insights/`
+* `1 Fields/`
+* `2 Topics/`
+* `3 Key Insights/`
 
 ### Key Data Structures
 
-Global dictionaries store state during execution:
-
-* `memo_file_paths`: Tracks file locations.
-* `memo_file_meta_data`: Stores tag and type metadata.
-* `memo_file_types`: Organizes files by their semantic category.
-* `memo_folder_paths`: Indexes folders across the vault.
+| Name                  | Role                                |
+| --------------------- | ----------------------------------- |
+| `memo_file_paths`     | Maps note → current path (DP cache) |
+| `memo_file_meta_data` | Maps note → metadata                |
+| `memo_file_types`     | Groups notes by semantic type       |
+| `memo_folder_paths`   | Indexes all folders in the vault    |
 
 ### Major Functions
 
-#### `update_memo_variables(vault_path)`
+| Function                        | Purpose                                                                  |
+| ------------------------------- | ------------------------------------------------------------------------ |
+| `update_memo_variables()`       | Refreshes all global memo dictionaries.                                  |
+| `vault_organizer()`             | Computes each note’s destination via DP + fuzzy matching, then moves it. |
+| `update_topics()`               | Rewrites topic links using depth‑first search.                           |
+| `delete_circular_topics_call()` | Removes self‑referential tags.                                           |
+| `delete_empty_folders()`        | Deletes any folder not in the core set *and* left empty.                 |
 
-Scans the vault to refresh global dictionaries based on the current file and folder structure.
-
-#### `vault_organizer(root_dir)`
-
-Moves notes into new folders according to their `field` or `topic` metadata. Uses fuzzy string matching to map topics to fields with contextual accuracy.
-
-#### `update_topics(memo_file_paths, memo_file_meta_data)`
-
-Traverses each memo and updates its topics using logic defined in the external `topic_search` module.
-
-#### `delete_circular_topics_call(memo_file_paths, memo_file_meta_data)`
-
-Removes redundant or self-referencing tags to maintain clean semantic hierarchy.
-
-#### `delete_empty_folders(memo_folder_paths)`
-
-Removes unused folders unless they are part of the protected core folder set.
+---
 
 ## Pro Tips
 
-* Always backup your vault before running the script, especially if you’re testing changes to metadata conventions.
-* For faster CLI access, you can alias the script in your `.zshrc` or `.bashrc`:
+* **Back up** your vault before the first run, especially if you’re changing metadata conventions.
+* For one‑command tidying, add an alias to `~/.zshrc` or `~/.bashrc`:
 
   ```bash
-  alias obsidian="cd $HOME/ObsidianVault && python _scripts/vault_organizer.py"
+  alias obsidian-clean="cd $HOME/ObsidianVault && python _scripts/vault_organizer.py"
   ```
 
-## Why I Built This
+---
 
-I’ve always been intrigued by how recursive logic and metadata parsing can create intelligent systems from unstructured content. Obsidian Vault Organizer is an experiment in building such a system—one that adapts and restructures a living knowledge base through automation. It’s also a practical way to keep a growing collection of notes navigable and meaningful over time.
+## Why I Built This
 
-The vault organizer isn't in active use but it was a fun experiment to explore recursion and dynamic programming. 
+I’m fascinated by how a well‑placed DP table or recursive traversal can impose order on unstructured data.  **Obsidian Vault Organizer** is my experiment in doing exactly that—letting automation reshape a living knowledge base so it stays navigable and meaningful as it grows.
+
+The script isn’t in daily use right now, but the design patterns (memoisation, recursion + DP, fuzzy matching) fuel much of my current tooling research.  I hope the project sparks ideas for your own vault—or at least shows how “hard‑sounding” dynamic programming can shine in practical software.

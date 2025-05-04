@@ -67,12 +67,6 @@ The end result is a vault where *each note lives exactly where its metadata says
    ```bash
    python _scripts/vault_organizer.py
    ```
-   
-9. Run the organiser:
-
-   ```bash
-   python _scripts/vault_organizer.py
-   ```
 
 ---
 

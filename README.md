@@ -1,4 +1,4 @@
-# Obsidian Vault Organizer: Recursive File Structuring with Python Automation
+# Obsidian Vault Organizer: Dynamic Programming File Structuring with Python Automation
 
 [Watch a demo of the automation in action.](https://github.com/pierremaw/Obsidian-Vault-Organizer/assets/99075249/46bac793-d696-49f3-b0d8-d096e24f1238)
 

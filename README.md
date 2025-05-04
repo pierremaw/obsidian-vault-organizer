@@ -67,14 +67,7 @@ The end result is a vault where *each note lives exactly where its metadata says
    ```bash
    python _scripts/vault_organizer.py
    ```
-
-\---|:---|:---|
-\| `vault_path` | Root of your vault | `./` |
-\| `template_folder` | Template storage | `_templates/` |
-\| `field_folder` | High‑level categories | `1 Fields/` |
-\| `topic_folder` | Topic subfolders | `2 Topics/` |
-\| `key_insights_folder` | Special insights | `3 Key Insights/` |
-
+   
 9. Run the organiser:
 
    ```bash
@@ -122,10 +115,3 @@ The end result is a vault where *each note lives exactly where its metadata says
   alias obsidian-clean="cd $HOME/ObsidianVault && python _scripts/vault_organizer.py"
   ```
 
----
-
-## Why I Built This
-
-I’m fascinated by how a well‑placed DP table or recursive traversal can impose order on unstructured data.  **Obsidian Vault Organizer** is my experiment in doing exactly that—letting automation reshape a living knowledge base so it stays navigable and meaningful as it grows.
-
-The script isn’t in daily use right now, but the design patterns (memoisation, recursion + DP, fuzzy matching) fuel much of my current tooling research.  I hope the project sparks ideas for your own vault—or at least shows how “hard‑sounding” dynamic programming can shine in practical software.

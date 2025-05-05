@@ -11,8 +11,6 @@ The payoff: a clean structure even when you have thousands of notes.
 
 This project showcases my interest in algorithmic organisation—how caching, recursion, fuzzy matching and metadata parsing can partially automate everyday tools like Obsidian.
 
----
-
 ## What the Script Does
 
 When you run the script it:
@@ -27,9 +25,6 @@ When you run the script it:
 * **Runs idempotently:** each execution scans, tidies and exits—so you can re‑run it any time after editing notes.
 
 The result is a vault where *each note lives exactly where its metadata says it should*—and the links inside the notes stay in sync with the folder layout.
-
-
----
 
 ## Setup Instructions
 
@@ -72,8 +67,6 @@ The result is a vault where *each note lives exactly where its metadata says it 
    python _scripts/vault_organizer.py
    ```
 
----
-
 ## Architecture and Core Functions
 
 ### Core Folders (never deleted)
@@ -99,8 +92,6 @@ The result is a vault where *each note lives exactly where its metadata says it 
 | `update_topics()`               | Rewrites topic links using depth‑first search.                           |
 | `delete_circular_topics_call()` | Removes self‑referential tags.                                           |
 | `delete_empty_folders()`        | Deletes any folder not in the core set *and* left empty.                 |
-
----
 
 ## Pro Tips
 

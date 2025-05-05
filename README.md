@@ -1,6 +1,6 @@
 # Obsidian Vault Organizer
 
-https://github.com/user-attachments/assets/4b388696-c844-4a45-bf9f-7e5fc5025848
+https://github.com/user-attachments/assets/b8f4986e-61c3-4c1a-81df-f2e13223f948
 
 **Obsidian Vault Organizer** is a Python automation script that turns an Obsidian vault into a *self‑tidying* folder hierarchy.  It uses file‑system exploration, recursion, and dynamic programming to place notes in a file hierarchy based on their tagged *type* and *topic*.
 

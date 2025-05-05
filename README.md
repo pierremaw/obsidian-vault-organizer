@@ -91,7 +91,6 @@ The result is a vault where *each note lives exactly where its metadata says it 
 
 ## Pro Tips
 
-* **Back up** your vault before the first run, especially if you’re changing metadata conventions.
 * For one‑command tidying, add an alias to `~/.zshrc` or `~/.bashrc`:
 
   ```bash

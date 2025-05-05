@@ -65,7 +65,7 @@ The result is a vault where *each note lives exactly where its metadata says it 
 
 ## Architecture and Core Functions
 
-### Core Folders (never deleted)
+### Core Folders
 
 * `_templates/`
 * `1 Fields/`

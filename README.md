@@ -16,7 +16,7 @@ This project showcases my interest in algorithmic organisation—how DP, recursi
 When you run the script it:
 
 * **Recursively traverses** your vault to discover every Markdown note.
-* **Parses metadata**—tags such as `field`, `topic`, and `insight`—for each note.
+* **Parses metadata**—tags such as `topic` and `type`—for each note.
 * **Computes the optimal location** for every note via a DP lookup, then moves the file accordingly.
 * **Eliminates clutter** by deleting empty folders and resolving circular topic references.
 * **Refines relationships** with fuzzy‑string matching to keep topics semantically accurate.

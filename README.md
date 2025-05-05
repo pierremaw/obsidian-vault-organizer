@@ -5,7 +5,7 @@
 **Obsidian Vault Organizer** is a Python automation script that transforms an Obsidian vault into a self‑maintaining knowledge graph.  It explores
 recursion, file‑system exploration, **and a memoised dynamic‑programming (DP) approach** to organize a vault based on its tagged type and topic.
 
-Under the hood, each note becomes a *state* keyed by its metadata.  The script builds a DP table that maps that state to a folder path, caching the result so repeated look‑ups run in **O(1)** instead of repeatedly traversing the vault.  The payoff: a clean structure even for thousands of notes.
+Under the hood, each note stores a *state* keyed by its metadata.  The script builds a DP table that maps that state to a folder path, caching the result so repeated look‑ups run in **O(1)** instead of repeatedly traversing the vault.  The payoff: a clean structure even for thousands of notes.
 
 This project showcases my interest in algorithmic organisation—how DP, recursion, and metadata parsing can partially automate everyday tools like Obsidian.
 

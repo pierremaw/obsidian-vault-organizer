@@ -19,7 +19,6 @@ When you run the script it:
   * `topic` notes are filed under the closest‑matching field using **fuzzy‑string heuristics**.
 * **Propagates relationships** with a depth‑first search that rewrites `Topics:` links so each note inherits the right upstream topics.
 * **Eliminates clutter** by deleting empty folders and removing *circular* topic references (notes that list themselves as a topic).
-* **Runs idempotently:** each execution scans, tidies and exits—so you can re‑run it any time after editing notes.
 
 The result is a vault where *each note lives exactly where its metadata says it should*—and the links inside the notes stay in sync with the folder layout.
 

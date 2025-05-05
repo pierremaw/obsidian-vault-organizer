@@ -13,7 +13,7 @@ This project showcases my interest in algorithmic organisation—how caching, re
 When you run the script it:
 
 * **Recursively traverses** your vault once to index every Markdown note.
-* **Caches metadata**—tags such as `field`, `topic`, and `type`—in in‑memory lookup tables.
+* **Caches metadata**—tags such as `topic`, and `type`—in in‑memory lookup tables.
 * **Computes a destination folder** for every note:  
   * `field` notes become top‑level folders.  
   * `topic` notes are filed under the closest‑matching field using **fuzzy‑string heuristics**.

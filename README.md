@@ -1,4 +1,4 @@
-# Obsidian Vault Organizer · Dynamic‑Programming‑Driven File Organization in Python
+# Obsidian Vault Organizer
 
 [https://github.com/user-attachments/assets/840e9d63-2572-48f4-958c-0f43ffa524d6](https://github.com/user-attachments/assets/840e9d63-2572-48f4-958c-0f43ffa524d6)
 

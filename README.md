@@ -6,7 +6,7 @@ https://github.com/user-attachments/assets/b8f4986e-61c3-4c1a-81df-f2e13223f948
 
 Under the hood, each note’s metadata is cached in dictionaries on the first walk through the vault. Those caches let subsequent look‑ups run in **O(1)** during the *same* execution, instead of repeatedly traversing the tree. The payoff: a clean structure even when you have thousands of notes.
 
-This project showcases my interest in algorithmic organisation—how caching, recursion, fuzzy matching and metadata parsing can partially automate everyday tools like Obsidian.
+This project enabled me to develop proficiency in recursion, fuzzy matching and metadata parsing.
 
 ## What the Script Does
 

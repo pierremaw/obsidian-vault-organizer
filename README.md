@@ -1,13 +1,15 @@
-# Obsidian Vault Organizer: Dynamic‑Programming‑Driven File Organization in Python
+# Obsidian Vault Organizer · Dynamic‑Programming‑Driven File Organization in Python
 
 [https://github.com/user-attachments/assets/840e9d63-2572-48f4-958c-0f43ffa524d6](https://github.com/user-attachments/assets/840e9d63-2572-48f4-958c-0f43ffa524d6)
 
-**Obsidian Vault Organizer** is a Python automation script that transforms an Obsidian vault into a self‑organizing knowledge graph.  It explores
-recursion, file‑system exploration, **and a memoised dynamic‑programming (DP) approach** to organize a vault based on its tagged type and topic.
+**Obsidian Vault Organizer** is a Python automation script that turns an Obsidian vault into a *self‑tidying* folder hierarchy.  It explores  
+recursion, file‑system exploration, **and a memoised lookup‑table (lightweight DP‑style) approach** to place notes based on their tagged *type* and *topic*.
 
-Under the hood, each note stores a *state* keyed by its metadata.  The script builds a DP table that maps that state to a folder path, caching the result so repeated look‑ups run in **O(1)** instead of repeatedly traversing the vault.  The payoff: a clean structure even for thousands of notes.
+Under the hood, each note’s metadata is cached in dictionaries on the first walk through the vault.  
+Those caches let subsequent look‑ups run in **O(1)** during the *same* execution, instead of repeatedly traversing the tree.  
+The payoff: a clean structure even when you have thousands of notes.
 
-This project showcases my interest in algorithmic organisation—how DP, recursion, and metadata parsing can partially automate everyday tools like Obsidian.
+This project showcases my interest in algorithmic organisation—how caching, recursion, fuzzy matching and metadata parsing can partially automate everyday tools like Obsidian.
 
 ---
 
@@ -15,13 +17,17 @@ This project showcases my interest in algorithmic organisation—how DP, recursi
 
 When you run the script it:
 
-* **Recursively traverses** your vault to discover every Markdown note.
-* **Parses metadata**—tags such as `topic` and `type`—for each note.
-* **Computes the optimal location** for every note via a DP lookup, then moves the file accordingly.
-* **Eliminates clutter** by deleting empty folders and resolving circular topic references.
-* **Refines relationships** with fuzzy‑string matching to keep topics semantically accurate.
+* **Recursively traverses** your vault once to index every Markdown note.
+* **Caches metadata**—tags such as `field`, `topic`, and `type`—in in‑memory lookup tables.
+* **Computes a destination folder** for every note:  
+  * `field` notes become top‑level folders.  
+  * `topic` notes are filed under the closest‑matching field using **fuzzy‑string heuristics**.
+* **Propagates relationships** with a depth‑first search that rewrites `Topics:` links so each note inherits the right upstream topics.
+* **Eliminates clutter** by deleting empty folders and removing *circular* topic references (notes that list themselves as a topic).
+* **Runs idempotently:** each execution scans, tidies and exits—so you can re‑run it any time after editing notes.
 
-The end result is a vault where *each note lives exactly where its metadata says it should*.
+The result is a vault where *each note lives exactly where its metadata says it should*—and the links inside the notes stay in sync with the folder layout.
+
 
 ---
 

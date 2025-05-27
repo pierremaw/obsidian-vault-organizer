@@ -100,12 +100,6 @@ The script ensures that each note lives precisely where its metadata dictates—
 
 ## Tips and Tricks
 
-Certainly. Here's the clarified version of that section with an added explanatory sentence to improve usability:
-
----
-
-## Tips and Tricks
-
 To simplify future usage, you can create a shell alias that lets you run the organizer with a single command from any terminal session. Add the following line to your `~/.bashrc`, `~/.zshrc`, or equivalent shell configuration file:
 
 ```bash

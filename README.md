@@ -100,8 +100,16 @@ The script ensures that each note lives precisely where its metadata dictates—
 
 ## Tips and Tricks
 
-To simplify future usage, create a shell alias:
+Certainly. Here's the clarified version of that section with an added explanatory sentence to improve usability:
+
+---
+
+## Tips and Tricks
+
+To simplify future usage, you can create a shell alias that lets you run the organizer with a single command from any terminal session. Add the following line to your `~/.bashrc`, `~/.zshrc`, or equivalent shell configuration file:
 
 ```bash
 alias obsidian-clean="cd $HOME/ObsidianVault && python _scripts/vault_organizer.py"
 ```
+
+After saving the file, reload your shell or run `source ~/.bashrc` (or `source ~/.zshrc`) to apply the change. Now, typing `obsidian-clean` will automatically navigate to your vault and run the organizer script.
